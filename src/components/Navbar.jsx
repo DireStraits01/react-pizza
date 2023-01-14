@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiFillHome } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaShoppingCart } from 'react-icons/fa';
 import style from './Navbar.module.css';
 
 function Navbar() {
+  const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
+  const handleBurgerMenu = () => {
+    setOpenBurgerMenu(!openBurgerMenu);
+  };
+
   return (
     <>
       <header>
@@ -13,7 +18,7 @@ function Navbar() {
 
           <span>Logo</span>
         </div>
-        <ul className={style.navbar}>
+        <ul className={`${style.navbar} ${openBurgerMenu ? style.open : ''}`}>
           <li>
             <a href="/#">Home</a>
           </li>
@@ -35,7 +40,7 @@ function Navbar() {
             <FaShoppingCart />
           </a>
           <div className={style.burgerMenu} id={style.burgerMenu}>
-            <GiHamburgerMenu />
+            <GiHamburgerMenu onClick={handleBurgerMenu} />
           </div>
         </div>
       </header>
