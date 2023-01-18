@@ -3,6 +3,7 @@ import { AiFillHome } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaShoppingCart } from 'react-icons/fa';
 import style from './Navbar.module.css';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
@@ -20,25 +21,22 @@ function Navbar() {
         </div>
         <ul className={`${style.navbar} ${openBurgerMenu ? style.open : ''}`}>
           <li>
-            <a href="/#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="/#">About us</a>
+            <Link to="/drinks">Drinks</Link>
           </li>
           <li>
-            <a href="/#">Services</a>
+            <Link to="/deserts">Deserts</Link>
           </li>
           <li>
-            <a href="/#">Blog</a>
-          </li>
-          <li>
-            <a href="/#">Contacts</a>
+            <Link to="/contacts">Contacts</Link>
           </li>
         </ul>
         <div className={style.cart}>
-          <a href="/#" className={style.cart__btn}>
+          <Link to="/#" className={style.cart__btn}>
             <FaShoppingCart />
-          </a>
+          </Link>
           <div className={style.burgerMenu} id={style.burgerMenu}>
             <GiHamburgerMenu onClick={handleBurgerMenu} />
           </div>
