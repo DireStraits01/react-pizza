@@ -1,4 +1,3 @@
-import { Nav } from 'react-bootstrap';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -12,12 +11,13 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/drinks" element={<Drinks />} />
-          <Route path="/deserts" element={<Deserts />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/" element={<Navbar />}>
+            <Route index element={<Home />} />
+            <Route path="/drinks" element={<Drinks />} />
+            <Route path="deserts" element={<Deserts />} />
+            <Route path="contacts" element={<Contacts />} />
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>

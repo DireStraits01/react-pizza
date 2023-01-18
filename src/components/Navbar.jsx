@@ -24,13 +24,13 @@ function Navbar() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/drinks">Drinks</Link>
+            <Link to="drinks">Drinks</Link>
           </li>
           <li>
-            <Link to="/deserts">Deserts</Link>
+            <Link to="deserts">Deserts</Link>
           </li>
           <li>
-            <Link to="/contacts">Contacts</Link>
+            <Link to="contacts">Contacts</Link>
           </li>
         </ul>
         <div className={style.cart}>
