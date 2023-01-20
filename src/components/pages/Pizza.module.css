@@ -92,3 +92,7 @@
 .pizzaCard__footer button:hover {
   background-color: rgb(244, 193, 157);
 }
+
+.modalStyle {
+  height: 500px !important;
+}

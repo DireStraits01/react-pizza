@@ -5,22 +5,32 @@ import style from './Pizza.module.css';
 import pizzaObjData from '../data/data';
 
 function Pizza() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false); /* for modal window */
+  const handleClose = () => setShow(false); /* for modal window */
+  const handleShow = () => setShow(true); /* for modal window */
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [pizzaInCart, setPizzaInCart] = useState({});
+
+  const handlePizzaInCart = (selectedPizza) => setPizzaInCart(selectedPizza);
   return (
     <>
       <div className={style.row}>
-        {pizzaObjData.map((pizzas, index) => {
+        {pizzaObjData.map((pizza, index) => {
           return (
             <div className={style.pizzaCard} key={index}>
-              <img src={pizzas.img} alt="" onClick={handleShow} />
-              <h3>{pizzas.title}</h3>
-              <p>{pizzas.ingredients}</p>
+              <img src={pizza.img} alt="" onClick={handleShow} />
+              <h3>{pizza.title}</h3>
+              <p>{pizza.ingredients}</p>
               <div className={style.pizzaCard__footer}>
-                <span className={style.pizzaCard__price}>${pizzas.price}</span>
-                <Button variant="primary" onClick={handleShow}>
+                <span className={style.pizzaCard__price}>${pizza.price}</span>
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    handleShow();
+
+                    handlePizzaInCart(pizza);
+                  }}
+                >
                   show
                 </Button>
               </div>
@@ -39,9 +49,9 @@ function Pizza() {
         centered
       >
         <Modal.Header closeButton className="border-0">
-          <Modal.Title></Modal.Title>
+          <Modal.Title>{pizzaInCart.title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body></Modal.Body>
+        <Modal.Body className={style.modalStyle}></Modal.Body>
         <Modal.Footer className="border-0">
           <Button variant="primary">Understood</Button>
         </Modal.Footer>
