@@ -1,4 +1,4 @@
-.row {
+.pizzaList {
   margin-top: 150px;
   margin-left: 5%;
   margin-right: 5%;
@@ -7,6 +7,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
+
 .pizzaCard {
   height: 500px;
   width: 300px;
@@ -95,4 +96,62 @@
 
 .modalStyle {
   height: 500px !important;
+}
+.orderItem {
+  display: flex;
+  align-items: center;
+}
+
+.orderItem_options {
+  padding: 20px 200px;
+}
+.picca_size,
+.doughThickness {
+  border-radius: 9999px;
+  background-color: rgb(243, 243, 247);
+  height: 32px;
+  display: flex;
+  overflow: hidden;
+  margin: 8px 0px;
+}
+
+label {
+  border-radius: 9999px;
+  flex: 0%;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  line-height: 32px;
+  font-family: system-ui, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-weight: normal;
+  text-align: center;
+  height: 32px;
+
+  transition: color 150ms ease 0s;
+}
+
+label:hover {
+  background-color: #fff;
+  height: 29px;
+  margin: 2px;
+  box-shadow: -2px 1px 20px -8px rgba(0, 0, 0, 0.73);
+}
+
+.btnActive:focus {
+  background-color: #fff;
+  height: 29px;
+  margin: 2px;
+  box-shadow: -2px 1px 20px -8px rgba(0, 0, 0, 0.73);
+}
+
+.dough:focus {
+  background-color: #fff;
+  height: 29px;
+  margin: 2px;
+  box-shadow: -2px 1px 20px -8px rgba(0, 0, 0, 0.73);
+}
+
+label:active {
+  box-shadow: #ffffff 0 3px 7px inset;
 }
