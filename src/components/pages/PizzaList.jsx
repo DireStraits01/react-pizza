@@ -5,11 +5,22 @@ import pizzas from '../data/data';
 import style from './Pizza.module.css';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+// import { GiConsoleController } from 'react-icons/gi';
 
 function PizzaList() {
+  const [pizzaSize, setPizzaSize] = useState('medium');
   const [show, setShow] = useState(false); /* for modal window */
   const handleClose = () => setShow(false); /* for modal window */
   const handleShow = () => setShow(true); /* for modal window */
+  const [cart, setCart] = useState([]);
+  const handleAddtoCart = (img, title, price, size) => {
+    if (Array.isArray(cart)) {
+      setCart([...cart, { img: img, title: title, price: price, size: size }]);
+    } else {
+      setCart([{ img: img, title: title, price: price }]);
+    }
+    console.log(cart);
+  };
 
   const [pizza, setPizza] = useState({
     img: '',
@@ -55,30 +66,42 @@ function PizzaList() {
           </div>
           <div className={style.orderItem_options}>
             <div className={style.picca_size}>
-              <label className={style.btnActive} tabIndex="1">
-                20sm
-              </label>
-              <label className={style.btnActive} tabIndex="1">
-                28sm
-              </label>
-              <label className={style.btnActive} tabIndex="1">
-                33sm
-              </label>
+              <select
+                name=""
+                id=""
+                onChange={(event) => setPizzaSize(event.target.value)}
+              >
+                <option value="small">25sm</option>
+                <option value="medium">30sm</option>
+                <option value="large">35sm</option>
+              </select>
             </div>
             <div className={style.doughThickness}>
               <label className={style.dough} tabIndex="1">
                 thin
               </label>
-              <label className={style.dough} tabIndex="2">
+              <label className={style.dough} tabIndex="1">
                 thick
               </label>
             </div>
+            <div />
           </div>
         </Modal.Body>
         <Modal.Footer className="border-0">
-          <Button variant="primary">
+          <Button
+            variant="primary"
+            onClick={() => {
+              handleAddtoCart(
+                pizza.img,
+                pizza.title,
+                pizza.price[pizzaSize],
+                pizzaSize
+              );
+              handleClose();
+            }}
+          >
             Understood
-            <span>$ {pizza.price.medium}</span>
+            <span>$ {pizza.price[pizzaSize]}</span>
           </Button>
         </Modal.Footer>
       </Modal>
