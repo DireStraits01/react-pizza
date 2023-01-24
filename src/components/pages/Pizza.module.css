@@ -155,3 +155,7 @@ label:hover {
 label:active {
   box-shadow: #ffffff 0 3px 7px inset;
 }
+
+input {
+  display: none;
+}

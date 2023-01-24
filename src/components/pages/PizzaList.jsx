@@ -66,15 +66,36 @@ function PizzaList() {
           </div>
           <div className={style.orderItem_options}>
             <div className={style.picca_size}>
-              <select
-                name=""
-                id=""
+              <label htmlFor="1" className={style.btnActive}>
+                small
+              </label>
+              <input
+                type="radio"
+                id="1"
+                value="small"
+                name="pizza-size"
                 onChange={(event) => setPizzaSize(event.target.value)}
-              >
-                <option value="small">25sm</option>
-                <option value="medium">30sm</option>
-                <option value="large">35sm</option>
-              </select>
+              />
+              <label htmlFor="2" className={style.btnActive}>
+                medium
+              </label>
+              <input
+                type="radio"
+                id="2"
+                value="medium"
+                name="pizza-size"
+                onChange={(event) => setPizzaSize(event.target.value)}
+              />
+              <label htmlFor="3" className={style.btnActive}>
+                large
+              </label>
+              <input
+                type="radio"
+                id="3"
+                value="large"
+                name="pizza-size"
+                onChange={(event) => setPizzaSize(event.target.value)}
+              />
             </div>
             <div className={style.doughThickness}>
               <label className={style.dough} tabIndex="1">
