@@ -5,19 +5,33 @@ import pizzas from '../data/data';
 import style from './Pizza.module.css';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+
 // import { GiConsoleController } from 'react-icons/gi';
 
-function PizzaList() {
+function PizzaList({ cart, setCart }) {
   const [pizzaSize, setPizzaSize] = useState('medium');
   const [show, setShow] = useState(false); /* for modal window */
   const handleClose = () => setShow(false); /* for modal window */
   const handleShow = () => setShow(true); /* for modal window */
-  const [cart, setCart] = useState([]);
+
   const handleAddtoCart = (img, title, price, size) => {
-    if (Array.isArray(cart)) {
-      setCart([...cart, { img: img, title: title, price: price, size: size }]);
+    if (cart.length > 0) {
+      let exist = false;
+      setCart(
+        cart.map((el) => {
+          if (el.title === title && el.price === price) {
+            exist = true;
+            return { ...el, count: el.count + 1 };
+          } else {
+            return el;
+          }
+        })
+      );
+      if (!exist) {
+        setCart([...cart, { img: img, title: title, price: price, count: 1 }]);
+      }
     } else {
-      setCart([{ img: img, title: title, price: price }]);
+      setCart([{ img: img, title: title, price: price, count: 1 }]);
     }
     console.log(cart);
   };
