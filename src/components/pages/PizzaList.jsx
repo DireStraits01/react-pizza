@@ -28,10 +28,27 @@ function PizzaList({ cart, setCart }) {
         })
       );
       if (!exist) {
-        setCart([...cart, { img: img, title: title, price: price, count: 1 }]);
+        setCart([
+          ...cart,
+          {
+            img: img,
+            title: title,
+            price: price,
+            count: 1,
+            size: size,
+          },
+        ]);
       }
     } else {
-      setCart([{ img: img, title: title, price: price, count: 1 }]);
+      setCart([
+        {
+          img: img,
+          title: title,
+          price: price,
+          count: 1,
+          size: size,
+        },
+      ]);
     }
     console.log(cart);
   };

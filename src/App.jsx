@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Navbar />}>
+          <Route path="/" element={<Navbar cart={cart} setCart={setCart} />}>
             <Route
               index
               element={<PizzaList cart={cart} setCart={setCart} />}

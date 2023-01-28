@@ -4,11 +4,14 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaShoppingCart } from 'react-icons/fa';
 import style from './Navbar.module.css';
 import { NavLink, Outlet } from 'react-router-dom';
+import Cart from './Cart';
 
-function Navbar() {
+function Navbar({ cart, setCart }) {
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
-  const handleBurgerMenu = () => {
-    setOpenBurgerMenu(!openBurgerMenu);
+  const [openCart, setOpenCart] = useState(false);
+  const handleBtnMenu = (btn, setBtn) => {
+    setBtn(!btn);
+    console.log('dd');
   };
 
   return (
@@ -33,12 +36,21 @@ function Navbar() {
             <NavLink to="contacts">Contacts</NavLink>
           </li>
         </ul>
-        <div className={style.cart}>
+        <div className={style.cartIcon}>
           <NavLink to="/#" className={style.cart__btn}>
-            <FaShoppingCart />
+            <FaShoppingCart
+              onClick={() => handleBtnMenu(openCart, setOpenCart)}
+            />
           </NavLink>
+          <div className={`${style.cart} ${openCart ? style.open : ''}`}>
+            {cart.map((itemInCart, index) => {
+              return <Cart cart={itemInCart} key={index} setCart={setCart} />;
+            })}
+          </div>
           <div className={style.burgerMenu} id={style.burgerMenu}>
-            <GiHamburgerMenu onClick={handleBurgerMenu} />
+            <GiHamburgerMenu
+              onClick={() => handleBtnMenu(openBurgerMenu, setOpenBurgerMenu)}
+            />
           </div>
         </div>
       </header>
