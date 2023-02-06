@@ -44,7 +44,14 @@ function Navbar({ cart, setCart }) {
           </NavLink>
           <div className={`${style.cart} ${openCart ? style.open : ''}`}>
             {cart.map((itemInCart, index) => {
-              return <Cart cart={itemInCart} key={index} setCart={setCart} />;
+              return (
+                <Cart
+                  cart={itemInCart}
+                  key={index}
+                  setCart={setCart}
+                  cartArray={cart}
+                />
+              );
             })}
           </div>
           <div className={style.burgerMenu} id={style.burgerMenu}>

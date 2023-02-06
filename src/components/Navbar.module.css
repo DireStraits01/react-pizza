@@ -89,19 +89,24 @@ header {
 .cart {
   background-color: var(--background-color);
   position: absolute;
-  border-radius: 10px;
   transition: all 0.5s ease;
   top: 100%;
   right: -100%;
   width: 500px;
-  height: 150vh;
-  opacity: 1;
+  height: 90vh;
+  z-index: 5;
+  overflow: scroll;
 }
 
 .iteminCartWraper {
   background-color: var(--background-color-item);
   margin: 15px 0;
   display: flex;
+}
+
+.iteminCartWraper:first-child {
+  margin: 0;
+  padding-top: 15px;
 }
 
 .iteminCartCount {
@@ -132,6 +137,14 @@ header {
   padding: 12px;
 }
 .iconForCount {
+  cursor: pointer;
+}
+
+.iconMinus {
+  color: #d11a2a;
+}
+.CiCircleRemove {
+  font-size: 30px;
   cursor: pointer;
 }
 .open {

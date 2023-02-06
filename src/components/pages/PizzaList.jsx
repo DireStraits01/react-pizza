@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuid } from 'uuid';
 import { useState } from 'react';
 import Pizza from './Pizza';
 import pizzas from '../data/data';
@@ -9,6 +10,7 @@ import Button from 'react-bootstrap/Button';
 // import { GiConsoleController } from 'react-icons/gi';
 
 function PizzaList({ cart, setCart }) {
+  const unique_id = uuid();
   const [pizzaSize, setPizzaSize] = useState('medium');
   const [show, setShow] = useState(false); /* for modal window */
   const handleClose = () => setShow(false); /* for modal window */
@@ -31,6 +33,7 @@ function PizzaList({ cart, setCart }) {
         setCart([
           ...cart,
           {
+            id: unique_id,
             img: img,
             title: title,
             price: price,
@@ -42,6 +45,7 @@ function PizzaList({ cart, setCart }) {
     } else {
       setCart([
         {
+          id: unique_id,
           img: img,
           title: title,
           price: price,
