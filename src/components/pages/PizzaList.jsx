@@ -11,8 +11,8 @@ import Button from 'react-bootstrap/Button';
 
 function PizzaList({ cart, setCart }) {
   const unique_id = uuid();
-  const [pizzaSize, setPizzaSize] = useState('medium');
-  const [pizzaDough, setPizzaDough] = useState(0);
+  const [pizzaSize, setPizzaSize] = useState(false);
+  const [pizzaDough, setPizzaDough] = useState(false);
   const [show, setShow] = useState(false); /* for modal window */
   const handleClose = () => setShow(false); /* for modal window */
   const handleShow = () => setShow(true); /* for modal window */
@@ -92,7 +92,15 @@ function PizzaList({ cart, setCart }) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <Modal.Header closeButton className="border-0">
+        <Modal.Header
+          closeButton
+          className="border-0"
+          onClick={() => {
+            setPizzaDough(false);
+            setPizzaSize(false);
+            handleClose();
+          }}
+        >
           <Modal.Title></Modal.Title>
         </Modal.Header>
         <Modal.Body className={style.modalStyle}>
@@ -162,23 +170,29 @@ function PizzaList({ cart, setCart }) {
           </div>
         </Modal.Body>
         <Modal.Footer className="border-0">
-          <Button
-            variant="primary"
-            onClick={() => {
-              handleAddtoCart(
-                pizza.img,
-                pizza.title,
-                pizza.price[pizzaSize],
-                pizzaSize,
-                pizzaDough
-              );
-              handleClose();
-              console.log('number of pizza: ' + pizzaDough);
-            }}
-          >
-            Understood
-            <span>$ {pizza.price[pizzaSize]}</span>
-          </Button>
+          {pizzaDough && pizzaDough ? (
+            <Button
+              variant="primary"
+              onClick={() => {
+                handleAddtoCart(
+                  pizza.img,
+                  pizza.title,
+                  pizza.price[pizzaSize],
+                  pizzaSize,
+                  pizzaDough
+                );
+                handleClose();
+                console.log('number of pizza: ' + pizzaDough);
+              }}
+            >
+              Understood
+              <span>$ {pizza.price[pizzaSize]}</span>
+            </Button>
+          ) : (
+            <Button variant="secondary" disabled>
+              Please select size and dough type
+            </Button>
+          )}
         </Modal.Footer>
       </Modal>
     </>
