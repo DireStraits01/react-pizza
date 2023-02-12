@@ -40,6 +40,7 @@ function Cart({ cart, setCart, cartArray }) {
           <div className={style.itemInCartTextInfo}>
             <h3>{cart.title}</h3>
             <p>{cart.size}&nbsp;</p>
+            <p>{cart.dough}&nbsp;</p>
           </div>
           <div className={style.iteminCartPriceInfo}>
             <span>{cart.price}</span>

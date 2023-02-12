@@ -12,16 +12,17 @@ import Button from 'react-bootstrap/Button';
 function PizzaList({ cart, setCart }) {
   const unique_id = uuid();
   const [pizzaSize, setPizzaSize] = useState('medium');
+  const [pizzaDough, setPizzaDough] = useState(0);
   const [show, setShow] = useState(false); /* for modal window */
   const handleClose = () => setShow(false); /* for modal window */
   const handleShow = () => setShow(true); /* for modal window */
 
-  const handleAddtoCart = (img, title, price, size) => {
+  const handleAddtoCart = (img, title, price, size, dough) => {
     if (cart.length > 0) {
       let exist = false;
       setCart(
         cart.map((el) => {
-          if (el.title === title && el.price === price) {
+          if (el.title === title && el.price === price && el.dough === dough) {
             exist = true;
             return { ...el, count: el.count + 1 };
           } else {
@@ -39,6 +40,7 @@ function PizzaList({ cart, setCart }) {
             price: price,
             count: 1,
             size: size,
+            dough: dough,
           },
         ]);
       }
@@ -51,6 +53,7 @@ function PizzaList({ cart, setCart }) {
           price: price,
           count: 1,
           size: size,
+          dough: dough,
         },
       ]);
     }
@@ -61,6 +64,7 @@ function PizzaList({ cart, setCart }) {
     img: '',
     title: '',
     ingredients: '',
+    dough: '',
     price: { small: 0, medium: 0, large: 0 },
   });
 
@@ -133,12 +137,26 @@ function PizzaList({ cart, setCart }) {
               />
             </div>
             <div className={style.doughThickness}>
-              <label className={style.dough} tabIndex="1">
+              <label className={style.dough} tabIndex="1" htmlFor="thin">
                 thin
               </label>
-              <label className={style.dough} tabIndex="1">
+              <input
+                type="radio"
+                id="thin"
+                value="thin"
+                name="pizza-dough"
+                onChange={(event) => setPizzaDough(event.target.value)}
+              />
+              <label className={style.dough} tabIndex="1" htmlFor="thick">
                 thick
               </label>
+              <input
+                type="radio"
+                id="thick"
+                value="thick"
+                name="pizza-dough"
+                onChange={(event) => setPizzaDough(event.target.value)}
+              />
             </div>
             <div />
           </div>
@@ -151,9 +169,11 @@ function PizzaList({ cart, setCart }) {
                 pizza.img,
                 pizza.title,
                 pizza.price[pizzaSize],
-                pizzaSize
+                pizzaSize,
+                pizzaDough
               );
               handleClose();
+              console.log('number of pizza: ' + pizzaDough);
             }}
           >
             Understood
