@@ -9,7 +9,15 @@ import Button from 'react-bootstrap/Button';
 
 // import { GiConsoleController } from 'react-icons/gi';
 
-function PizzaList({ cart, setCart }) {
+function PizzaList({ cart, setCart, cartCost, setCartCost }) {
+  const [pizza, setPizza] = useState({
+    img: '',
+    title: '',
+    ingredients: '',
+    dough: '',
+    price: { small: 0, medium: 0, large: 0 },
+  });
+
   const unique_id = uuid();
   const [pizzaSize, setPizzaSize] = useState(false);
   const [pizzaDough, setPizzaDough] = useState(false);
@@ -60,18 +68,11 @@ function PizzaList({ cart, setCart }) {
     console.log(cart);
   };
 
-  const [pizza, setPizza] = useState({
-    img: '',
-    title: '',
-    ingredients: '',
-    dough: '',
-    price: { small: 0, medium: 0, large: 0 },
-  });
-
   const handlePizzaModal = (selectedPizza) => setPizza(selectedPizza);
 
   return (
     <>
+      {/*==============================================Pizza list================================*/}
       <div className={style.pizzaList}>
         {pizzas.map((pizza, index) => (
           <Pizza
@@ -82,7 +83,9 @@ function PizzaList({ cart, setCart }) {
           />
         ))}
       </div>
+      {/*========================================================================================*/}
 
+      {/*=================================Modal Window for add order pizza to cart==================*/}
       <Modal
         show={show}
         onHide={handleClose}
@@ -113,7 +116,7 @@ function PizzaList({ cart, setCart }) {
           </div>
           <div className={style.orderItem_options}>
             <div className={style.picca_size}>
-              <label htmlFor="1" className={style.btnActive}>
+              <label htmlFor="1" className={style.btnActive} tabIndex="0">
                 small
               </label>
               <input
@@ -123,7 +126,7 @@ function PizzaList({ cart, setCart }) {
                 name="pizza-size"
                 onChange={(event) => setPizzaSize(event.target.value)}
               />
-              <label htmlFor="2" className={style.btnActive}>
+              <label htmlFor="2" className={style.btnActive} tabIndex="0">
                 medium
               </label>
               <input
@@ -133,7 +136,7 @@ function PizzaList({ cart, setCart }) {
                 name="pizza-size"
                 onChange={(event) => setPizzaSize(event.target.value)}
               />
-              <label htmlFor="3" className={style.btnActive}>
+              <label htmlFor="3" className={style.btnActive} tabIndex="0">
                 large
               </label>
               <input
@@ -181,12 +184,22 @@ function PizzaList({ cart, setCart }) {
                   pizzaSize,
                   pizzaDough
                 );
+                setPizzaDough(false);
+                setPizzaSize(false);
+                setCartCost(cartCost + pizza.price[pizzaSize]);
                 handleClose();
-                console.log('number of pizza: ' + pizzaDough);
               }}
             >
-              Understood
-              <span>$ {pizza.price[pizzaSize]}</span>
+              <p>
+                to Cart&nbsp;
+                <span className={style.btnAddToCart}>{pizzaSize} </span> pizza
+                and&nbsp;
+                <span className={style.btnAddToCart}>{pizzaDough}</span>.&nbsp;
+                Cost:&nbsp;
+                <span className={style.btnAddToCart}>
+                  ${pizza.price[pizzaSize]}
+                </span>
+              </p>
             </Button>
           ) : (
             <Button variant="secondary" disabled>

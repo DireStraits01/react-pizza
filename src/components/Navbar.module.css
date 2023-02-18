@@ -6,8 +6,8 @@
 
 :root {
   --text-color: #222327;
-  --main-color: #29fd53;
-  --background-color: rgb(243 243 247);
+  --main-color: rgb(244, 193, 157);
+  --background-color: rgb(243, 243, 247);
   --background-color-item: #fff;
 }
 
@@ -24,8 +24,6 @@ header {
   background: transparent;
   transition: all 0.5s ease;
   padding: 2rem 5%;
-  /* background-color: #fff;
-  opacity: 0.95; */
   background-color: rgba(225, 225, 225, 0.5);
 }
 .logo {
@@ -85,14 +83,15 @@ header {
   cursor: pointer;
   display: none;
 }
-/*             Cart style              */
+/*----------------Cart style------------------*/
 .cart {
-  background-color: var(--background-color);
+  background-color: rgba(225, 225, 225, 0.5);
   position: absolute;
   transition: all 0.5s ease;
+  border-left: 2px solid var(--main-color);
   top: 100%;
   right: -100%;
-  width: 500px;
+  width: 350px;
   height: 90vh;
   z-index: 5;
   overflow: scroll;
@@ -100,8 +99,9 @@ header {
 
 .iteminCartWraper {
   background-color: var(--background-color-item);
-  margin: 15px 0;
   display: flex;
+  border-bottom: 8px solid rgba(225, 225, 225, 0.5);
+  padding-top: 15px;
 }
 
 .iteminCartWraper:first-child {
@@ -109,6 +109,19 @@ header {
   padding-top: 15px;
 }
 
+.itemInCartTextInfo {
+  text-align: left;
+  padding-left: 15px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 16px;
+}
+
+.itemInCartTextInfo p {
+  color: rgb(92, 99, 112);
+  letter-spacing: 0px;
+  font-size: 12px;
+}
 .iteminCartCount {
   background-color: var(--background-color);
   color: rgb(0, 0, 0);
@@ -144,8 +157,15 @@ header {
   color: #d11a2a;
 }
 .CiCircleRemove {
-  font-size: 30px;
+  font-size: 40px;
   cursor: pointer;
+  padding-right: 8px;
+}
+
+.CiCircleRemove:hover {
+  color: #d11a2a;
+  font-size: 42px;
+  transition: all 0.1s ease;
 }
 .open {
   right: 0.5%;

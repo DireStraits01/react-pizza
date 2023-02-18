@@ -9,14 +9,32 @@ import Deserts from './components/pages/Deserts';
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [cartCost, setCartCost] = useState(0);
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Navbar cart={cart} setCart={setCart} />}>
+          <Route
+            path="/"
+            element={
+              <Navbar
+                cart={cart}
+                setCart={setCart}
+                cartCost={cartCost}
+                setCartCost={setCartCost}
+              />
+            }
+          >
             <Route
               index
-              element={<PizzaList cart={cart} setCart={setCart} />}
+              element={
+                <PizzaList
+                  cart={cart}
+                  setCart={setCart}
+                  cartCost={cartCost}
+                  setCartCost={setCartCost}
+                />
+              }
             />
             <Route path="/drinks" element={<Drinks />} />
             <Route path="deserts" element={<Deserts />} />

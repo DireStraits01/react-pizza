@@ -6,7 +6,7 @@ import style from './Navbar.module.css';
 import { NavLink, Outlet } from 'react-router-dom';
 import Cart from './Cart';
 
-function Navbar({ cart, setCart }) {
+function Navbar({ cart, setCart, cartCost, setCartCost }) {
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
   const [openCart, setOpenCart] = useState(false);
   const handleBtnMenu = (btn, setBtn) => {
@@ -43,6 +43,7 @@ function Navbar({ cart, setCart }) {
             />
           </NavLink>
           <div className={`${style.cart} ${openCart ? style.open : ''}`}>
+            {cartCost}
             {cart.map((itemInCart, index) => {
               return (
                 <Cart
@@ -50,6 +51,8 @@ function Navbar({ cart, setCart }) {
                   key={index}
                   setCart={setCart}
                   cartArray={cart}
+                  setCartCost={setCartCost}
+                  cartCost={cartCost}
                 />
               );
             })}

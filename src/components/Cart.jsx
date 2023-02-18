@@ -4,12 +4,12 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { RiDeleteBin2Line } from 'react-icons/ri';
 import { CiCircleRemove } from 'react-icons/ci';
 import style from './Navbar.module.css';
-function Cart({ cart, setCart, cartArray }) {
-  const pizzaHandleCartMinus = (cart) => {
+function Cart({ cart, setCart, cartArray, setCartCost, cartCost }) {
+  const pizzaHandleCartMinus = (cart, priceItem) => {
     if (cart.count < 2) {
       return setCart(cartArray.filter((itemCart) => itemCart.id !== cart.id));
     } else {
-      return setCart(
+      setCart(
         cartArray.map((cartItem) => {
           if (cartItem.id === cart.id) {
             return { ...cartItem, count: cartItem.count - 1 };
@@ -19,9 +19,12 @@ function Cart({ cart, setCart, cartArray }) {
         })
       );
     }
+
+    const newCost = cartCost - priceItem;
+    setCartCost(newCost);
   };
 
-  const pizzaHandleCartPlus = (cart) => {
+  const pizzaHandleCartPlus = (cart, priceItem) => {
     setCart(
       cartArray.map((cartItem) => {
         if (cart.id === cartItem.id) {
@@ -31,23 +34,28 @@ function Cart({ cart, setCart, cartArray }) {
         }
       })
     );
+    const newCost = cartCost + priceItem;
+    setCartCost(newCost);
   };
+
   return (
     <>
       <div className={style.iteminCartWraper}>
-        <img src={cart.img} alt="" height={150} />
+        <img src={cart.img} alt="" height={60} />
         <div className={style.iteminCartInfo}>
           <div className={style.itemInCartTextInfo}>
-            <h3>{cart.title}</h3>
-            <p>{cart.size}&nbsp;</p>
-            <p>{cart.dough}&nbsp;</p>
+            <h5>{cart.title}</h5>
+            <p>
+              {cart.dough}&nbsp;dough&nbsp;,{cart.size}&nbsp;size.
+            </p>
           </div>
+          <hr />
           <div className={style.iteminCartPriceInfo}>
-            <span>{cart.price}</span>
+            <span>${cart.price * cart.count}</span>
             <div className={style.iteminCartCount}>
               <div
                 className={style.iconForCount}
-                onClick={() => pizzaHandleCartMinus(cart)}
+                onClick={() => pizzaHandleCartMinus(cart, cart.price)}
               >
                 {cart.count < 2 ? (
                   <RiDeleteBin2Line className={style.iconMinus} />
@@ -55,11 +63,10 @@ function Cart({ cart, setCart, cartArray }) {
                   <AiOutlineMinus />
                 )}
               </div>
-
               <span>{cart.count}</span>
               <div
                 className={style.iconForCount}
-                onClick={() => pizzaHandleCartPlus(cart)}
+                onClick={() => pizzaHandleCartPlus(cart, cart.price)}
               >
                 <AiOutlinePlus />
               </div>
