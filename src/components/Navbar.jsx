@@ -38,9 +38,9 @@ function Navbar({ cart, setCart, cartCost, setCartCost }) {
         </ul>
         <div className={style.cartIcon}>
           <NavLink to="/#" className={style.cart__btn}>
-            <FaShoppingCart
-              onClick={() => handleBtnMenu(openCart, setOpenCart)}
-            />
+            <span onClick={() => handleBtnMenu(openCart, setOpenCart)}>
+              <FaShoppingCart />${cartCost}
+            </span>
           </NavLink>
           <div className={`${style.cart} ${openCart ? style.open : ''}`}>
             {cartCost}

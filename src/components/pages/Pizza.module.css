@@ -142,14 +142,17 @@ label:hover {
   box-shadow: -2px 1px 20px -8px rgba(0, 0, 0, 0.73);
 }
 
-label:active {
-  box-shadow: #ffffff 0 3px 7px inset;
-}
-
 input {
   display: none;
 }
 
 .btnAddToCart {
   color: tomato;
+}
+
+.focusBtn {
+  background-color: #fff;
+  height: 29px;
+  margin: 2px;
+  box-shadow: -2px 1px 20px -8px rgba(0, 0, 0, 0.73);
 }

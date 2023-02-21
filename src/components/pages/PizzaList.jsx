@@ -19,12 +19,27 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
   });
 
   const unique_id = uuid();
-  const [pizzaSize, setPizzaSize] = useState(false);
+  const [pizzaSize, setPizzaSize] = useState('medium');
   const [pizzaDough, setPizzaDough] = useState(false);
+  const [focusPizzaBtn, setFocusPizzaBtn] = useState(false);
+  const [focusPizzaBtnDough, setFocusPizzaBtnDough] = useState(false);
   const [show, setShow] = useState(false); /* for modal window */
   const handleClose = () => setShow(false); /* for modal window */
   const handleShow = () => setShow(true); /* for modal window */
 
+  const handleFocusBtnPizza = (className) => {
+    if (focusPizzaBtn === className) {
+      return `${style.focusBtn}`;
+    } else if (focusPizzaBtnDough === className) {
+      return `${style.focusBtn}`;
+    }
+  };
+
+  // co = (className) => {
+  //   if (focusPizzaBtnDough === className) {
+  //     return `${style.focusBtn}`;
+  //   }
+  // };
   const handleAddtoCart = (img, title, price, size, dough) => {
     if (cart.length > 0) {
       let exist = false;
@@ -102,6 +117,7 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
             setPizzaDough(false);
             setPizzaSize(false);
             handleClose();
+            setFocusPizzaBtn(false);
           }}
         >
           <Modal.Title></Modal.Title>
@@ -116,7 +132,12 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
           </div>
           <div className={style.orderItem_options}>
             <div className={style.picca_size}>
-              <label htmlFor="1" className={style.btnActive} tabIndex="0">
+              <label
+                htmlFor="1"
+                className={handleFocusBtnPizza('small')}
+                tabIndex="0"
+                onClick={(event) => setFocusPizzaBtn(event.target.textContent)}
+              >
                 small
               </label>
               <input
@@ -126,7 +147,12 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
                 name="pizza-size"
                 onChange={(event) => setPizzaSize(event.target.value)}
               />
-              <label htmlFor="2" className={style.btnActive} tabIndex="0">
+              <label
+                htmlFor="2"
+                className={handleFocusBtnPizza('medium')}
+                tabIndex="0"
+                onClick={(event) => setFocusPizzaBtn(event.target.textContent)}
+              >
                 medium
               </label>
               <input
@@ -136,7 +162,12 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
                 name="pizza-size"
                 onChange={(event) => setPizzaSize(event.target.value)}
               />
-              <label htmlFor="3" className={style.btnActive} tabIndex="0">
+              <label
+                htmlFor="3"
+                className={handleFocusBtnPizza('large')}
+                tabIndex="0"
+                onClick={(event) => setFocusPizzaBtn(event.target.textContent)}
+              >
                 large
               </label>
               <input
@@ -148,7 +179,14 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
               />
             </div>
             <div className={style.doughThickness}>
-              <label className={style.dough} tabIndex="1" htmlFor="thin">
+              <label
+                className={handleFocusBtnPizza('thin')}
+                tabIndex="1"
+                htmlFor="thin"
+                onClick={(event) =>
+                  setFocusPizzaBtnDough(event.target.textContent)
+                }
+              >
                 thin
               </label>
               <input
@@ -158,7 +196,14 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
                 name="pizza-dough"
                 onChange={(event) => setPizzaDough(event.target.value)}
               />
-              <label className={style.dough} tabIndex="1" htmlFor="thick">
+              <label
+                className={handleFocusBtnPizza('thick')}
+                tabIndex="1"
+                htmlFor="thick"
+                onClick={(event) =>
+                  setFocusPizzaBtnDough(event.target.textContent)
+                }
+              >
                 thick
               </label>
               <input
@@ -173,7 +218,7 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
           </div>
         </Modal.Body>
         <Modal.Footer className="border-0">
-          {pizzaDough && pizzaDough ? (
+          {pizzaDough && pizzaSize ? (
             <Button
               variant="primary"
               onClick={() => {
@@ -194,8 +239,8 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
                 to Cart&nbsp;
                 <span className={style.btnAddToCart}>{pizzaSize} </span> pizza
                 and&nbsp;
-                <span className={style.btnAddToCart}>{pizzaDough}</span>.&nbsp;
-                Cost:&nbsp;
+                <span className={style.btnAddToCart}>{pizzaDough}</span>
+                .&nbsp; Cost:&nbsp;
                 <span className={style.btnAddToCart}>
                   ${pizza.price[pizzaSize]}
                 </span>

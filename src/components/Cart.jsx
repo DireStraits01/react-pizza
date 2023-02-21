@@ -75,9 +75,10 @@ function Cart({ cart, setCart, cartArray, setCartCost, cartCost }) {
         </div>
         <CiCircleRemove
           className={style.CiCircleRemove}
-          onClick={() =>
-            setCart(cartArray.filter((item) => item.id !== cart.id))
-          }
+          onClick={() => {
+            setCart(cartArray.filter((item) => item.id !== cart.id));
+            setCartCost(cartCost - cart.price * cart.count);
+          }}
         />
       </div>
     </>
