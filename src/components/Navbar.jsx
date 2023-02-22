@@ -45,13 +45,22 @@ function Navbar({
         <div>
           <NavLink
             to="/#"
-            className={style.cartIconBtn}
+            className={`${
+              cartCount > 0 ? style.cartIconBtn : style.cartIconBtnNull
+            } `}
             onClick={() => handleBtnMenu(openCart, setOpenCart)}
           >
             <span className={style.cartIcon}>
               <FaShoppingCart />
             </span>
-            <span className={style.cartCount}> {cartCount}</span>
+            <span
+              className={`${
+                cartCount > 0 ? style.cartCount : style.cartCountNull
+              }`}
+            >
+              {' '}
+              {cartCount}
+            </span>
           </NavLink>
 
           <div className={`${style.cart} ${openCart ? style.open : ''}`}>
