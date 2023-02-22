@@ -4,9 +4,19 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { RiDeleteBin2Line } from 'react-icons/ri';
 import { CiCircleRemove } from 'react-icons/ci';
 import style from './Navbar.module.css';
-function Cart({ cart, setCart, cartArray, setCartCost, cartCost }) {
+function Cart({
+  cart,
+  setCart,
+  cartArray,
+  setCartCost,
+  cartCost,
+  cartCount,
+  setCartCount,
+}) {
   const pizzaHandleCartMinus = (cart, priceItem) => {
     if (cart.count < 2) {
+      setCartCost(cartCost - priceItem);
+      setCartCount(--cartCount);
       return setCart(cartArray.filter((itemCart) => itemCart.id !== cart.id));
     } else {
       setCart(
@@ -20,8 +30,8 @@ function Cart({ cart, setCart, cartArray, setCartCost, cartCost }) {
       );
     }
 
-    const newCost = cartCost - priceItem;
-    setCartCost(newCost);
+    setCartCost(cartCost - priceItem);
+    setCartCount(--cartCount);
   };
 
   const pizzaHandleCartPlus = (cart, priceItem) => {
@@ -34,8 +44,9 @@ function Cart({ cart, setCart, cartArray, setCartCost, cartCost }) {
         }
       })
     );
-    const newCost = cartCost + priceItem;
-    setCartCost(newCost);
+
+    setCartCost(cartCost + priceItem);
+    setCartCount(++cartCount);
   };
 
   return (
@@ -78,6 +89,7 @@ function Cart({ cart, setCart, cartArray, setCartCost, cartCost }) {
           onClick={() => {
             setCart(cartArray.filter((item) => item.id !== cart.id));
             setCartCost(cartCost - cart.price * cart.count);
+            setCartCount(cartCount - cart.count);
           }}
         />
       </div>

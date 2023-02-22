@@ -6,7 +6,7 @@
 
 :root {
   --text-color: #222327;
-  --main-color: rgb(244, 193, 157);
+  --main-color: rgb(255, 105, 0);
   --background-color: rgb(243, 243, 247);
   --background-color-item: #fff;
 }
@@ -29,11 +29,10 @@ header {
 .logo {
   display: flex;
   align-items: center;
-}
-.logo {
   color: var(--main-color);
   font-size: 2rem;
 }
+
 .logo span {
   color: var(--text-color);
   cursor: pointer;
@@ -62,20 +61,6 @@ header {
   color: var(--main-color);
 }
 
-.cartIcon {
-  display: flex;
-  align-items: center;
-}
-
-.cartIcon .cart__btn {
-  margin-right: 25px;
-  margin-left: 10px;
-  color: var(--text-color);
-  font-size: 2rem;
-  color: var(--main-color);
-  transition: all 0.5s ease;
-}
-
 #burgerMenu svg {
   font-size: 35px;
   color: var(--text-color);
@@ -84,6 +69,25 @@ header {
   display: none;
 }
 /*----------------Cart style------------------*/
+.cartIconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 9999px;
+  width: 110px;
+  background-color: var(--main-color);
+  font-size: 20px;
+  line-height: 35px;
+  transition: all 0.5s ease;
+  color: var(--background-color-item);
+  text-decoration: none;
+  padding-left: 10%;
+  padding-right: 10%;
+  border: 5px solid rgba(7, 3, 0, 0);
+}
+.cartIconBtn:hover {
+  color: rgb(244, 186, 148);
+}
 .cart {
   background-color: rgba(225, 225, 225, 0.5);
   position: absolute;

@@ -10,6 +10,7 @@ import Deserts from './components/pages/Deserts';
 function App() {
   const [cart, setCart] = useState([]);
   const [cartCost, setCartCost] = useState(0);
+  const [cartCount, setCartCount] = useState(0);
   return (
     <BrowserRouter>
       <div className="App">
@@ -22,6 +23,8 @@ function App() {
                 setCart={setCart}
                 cartCost={cartCost}
                 setCartCost={setCartCost}
+                cartCount={cartCount}
+                setCartCount={setCartCount}
               />
             }
           >
@@ -33,6 +36,8 @@ function App() {
                   setCart={setCart}
                   cartCost={cartCost}
                   setCartCost={setCartCost}
+                  cartCount={cartCount}
+                  setCartCount={setCartCount}
                 />
               }
             />

@@ -146,13 +146,17 @@ input {
   display: none;
 }
 
-.btnAddToCart {
-  color: tomato;
-}
-
 .focusBtn {
   background-color: #fff;
   height: 29px;
   margin: 2px;
   box-shadow: -2px 1px 20px -8px rgba(0, 0, 0, 0.73);
+}
+.btnOrderToCart {
+  background-color: rgb(255, 105, 0);
+  border: 5px solid rgba(7, 3, 0, 0);
+  border-radius: 9999px;
+  width: 400px;
+  height: 48px;
+  font-size: 16px;
 }

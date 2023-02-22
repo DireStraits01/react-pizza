@@ -6,12 +6,18 @@ import style from './Navbar.module.css';
 import { NavLink, Outlet } from 'react-router-dom';
 import Cart from './Cart';
 
-function Navbar({ cart, setCart, cartCost, setCartCost }) {
+function Navbar({
+  cart,
+  setCart,
+  cartCost,
+  setCartCost,
+  cartCount,
+  setCartCount,
+}) {
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
   const [openCart, setOpenCart] = useState(false);
   const handleBtnMenu = (btn, setBtn) => {
     setBtn(!btn);
-    console.log('dd');
   };
 
   return (
@@ -36,14 +42,20 @@ function Navbar({ cart, setCart, cartCost, setCartCost }) {
             <NavLink to="contacts">Contacts</NavLink>
           </li>
         </ul>
-        <div className={style.cartIcon}>
-          <NavLink to="/#" className={style.cart__btn}>
-            <span onClick={() => handleBtnMenu(openCart, setOpenCart)}>
-              <FaShoppingCart />${cartCost}
+        <div>
+          <NavLink
+            to="/#"
+            className={style.cartIconBtn}
+            onClick={() => handleBtnMenu(openCart, setOpenCart)}
+          >
+            <span className={style.cartIcon}>
+              <FaShoppingCart />
             </span>
+            <span className={style.cartCount}> {cartCount}</span>
           </NavLink>
+
           <div className={`${style.cart} ${openCart ? style.open : ''}`}>
-            {cartCost}
+            <span>${cartCost}</span>
             {cart.map((itemInCart, index) => {
               return (
                 <Cart
@@ -53,6 +65,8 @@ function Navbar({ cart, setCart, cartCost, setCartCost }) {
                   cartArray={cart}
                   setCartCost={setCartCost}
                   cartCost={cartCost}
+                  cartCount={cartCount}
+                  setCartCount={setCartCount}
                 />
               );
             })}

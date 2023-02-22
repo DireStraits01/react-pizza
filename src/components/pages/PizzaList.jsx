@@ -7,9 +7,17 @@ import style from './Pizza.module.css';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-// import { GiConsoleController } from 'react-icons/gi';
+function PizzaList({
+  cart,
+  setCart,
+  cartCost,
+  setCartCost,
+  cartCount,
+  setCartCount,
+}) {
+  const unique_id = uuid(); // funtion for unique id
 
-function PizzaList({ cart, setCart, cartCost, setCartCost }) {
+  /*____________________pizza variables___________________________*/
   const [pizza, setPizza] = useState({
     img: '',
     title: '',
@@ -17,16 +25,17 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
     dough: '',
     price: { small: 0, medium: 0, large: 0 },
   });
-
-  const unique_id = uuid();
   const [pizzaSize, setPizzaSize] = useState('medium');
   const [pizzaDough, setPizzaDough] = useState(false);
   const [focusPizzaBtn, setFocusPizzaBtn] = useState(false);
   const [focusPizzaBtnDough, setFocusPizzaBtnDough] = useState(false);
-  const [show, setShow] = useState(false); /* for modal window */
-  const handleClose = () => setShow(false); /* for modal window */
-  const handleShow = () => setShow(true); /* for modal window */
 
+  /*____________________for modal window___________________________*/
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  /*___funtion for change style buttons, options pizza siza and dough__*/
   const handleFocusBtnPizza = (className) => {
     if (focusPizzaBtn === className) {
       return `${style.focusBtn}`;
@@ -34,12 +43,7 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
       return `${style.focusBtn}`;
     }
   };
-
-  // co = (className) => {
-  //   if (focusPizzaBtnDough === className) {
-  //     return `${style.focusBtn}`;
-  //   }
-  // };
+  /*function add pizza to cart or increasing units in the cart if such a product is already available*/
   const handleAddtoCart = (img, title, price, size, dough) => {
     if (cart.length > 0) {
       let exist = false;
@@ -80,9 +84,9 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
         },
       ]);
     }
-    console.log(cart);
   };
 
+  /*____________________function for open window order__________________________*/
   const handlePizzaModal = (selectedPizza) => setPizza(selectedPizza);
 
   return (
@@ -98,7 +102,6 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
           />
         ))}
       </div>
-      {/*========================================================================================*/}
 
       {/*=================================Modal Window for add order pizza to cart==================*/}
       <Modal
@@ -116,8 +119,9 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
           onClick={() => {
             setPizzaDough(false);
             setPizzaSize(false);
-            handleClose();
+            setFocusPizzaBtnDough(false);
             setFocusPizzaBtn(false);
+            handleClose();
           }}
         >
           <Modal.Title></Modal.Title>
@@ -220,7 +224,7 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
         <Modal.Footer className="border-0">
           {pizzaDough && pizzaSize ? (
             <Button
-              variant="primary"
+              className={style.btnOrderToCart}
               onClick={() => {
                 handleAddtoCart(
                   pizza.img,
@@ -232,6 +236,9 @@ function PizzaList({ cart, setCart, cartCost, setCartCost }) {
                 setPizzaDough(false);
                 setPizzaSize(false);
                 setCartCost(cartCost + pizza.price[pizzaSize]);
+                setFocusPizzaBtn(false);
+                setFocusPizzaBtnDough(false);
+                setCartCount(++cartCount);
                 handleClose();
               }}
             >
