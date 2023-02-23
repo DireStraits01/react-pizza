@@ -1,5 +1,5 @@
 function Drinks() {
-  return <h1>Drinks</h1>;
+  return <></>;
 }
 
 export default Drinks;

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
+import CarouselBar from './components/CarouselBar';
 import Footer from './components/Footer';
 import PizzaList from './components/pages/PizzaList';
 import Contacts from './components/pages/Contacts';
@@ -23,7 +24,7 @@ function App() {
           cartCount={cartCount}
           setCartCount={setCartCount}
         />
-
+        <CarouselBar />
         <Routes>
           <Route
             index
