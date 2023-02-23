@@ -23,6 +23,7 @@ function App() {
           cartCount={cartCount}
           setCartCount={setCartCount}
         />
+
         <Routes>
           <Route
             index
