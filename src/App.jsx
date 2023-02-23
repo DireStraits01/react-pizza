@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import PizzaList from './components/pages/PizzaList';
 import Contacts from './components/pages/Contacts';
 import Drinks from './components/pages/Drinks';
@@ -14,11 +15,19 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <Navbar
+          cart={cart}
+          setCart={setCart}
+          cartCost={cartCost}
+          setCartCost={setCartCost}
+          cartCount={cartCount}
+          setCartCount={setCartCount}
+        />
         <Routes>
           <Route
-            path="/"
+            index
             element={
-              <Navbar
+              <PizzaList
                 cart={cart}
                 setCart={setCart}
                 cartCost={cartCost}
@@ -27,25 +36,14 @@ function App() {
                 setCartCount={setCartCount}
               />
             }
-          >
-            <Route
-              index
-              element={
-                <PizzaList
-                  cart={cart}
-                  setCart={setCart}
-                  cartCost={cartCost}
-                  setCartCost={setCartCost}
-                  cartCount={cartCount}
-                  setCartCount={setCartCount}
-                />
-              }
-            />
-            <Route path="/drinks" element={<Drinks />} />
-            <Route path="deserts" element={<Deserts />} />
-            <Route path="contacts" element={<Contacts />} />
-          </Route>
+          />
+          <Route path="/drinks" element={<Drinks />} />
+          <Route path="deserts" element={<Deserts />} />
+          <Route path="contacts" element={<Contacts />} />
+
+          <Route path="/" element={<Footer />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );

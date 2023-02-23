@@ -1,0 +1,20 @@
+.content {
+  min-height: 90vh;
+}
+.footer {
+  height: 580px;
+  background-color: rgb(24, 24, 24);
+  width: 100%;
+}
+.orangeLine {
+  height: 60px;
+  background-color: rgb(255, 105, 0);
+  display: flex;
+  align-items: center;
+}
+
+.orangeLine p {
+  color: rgb(255, 255, 255);
+  margin-left: 10%;
+  font-size: 18px;
+}

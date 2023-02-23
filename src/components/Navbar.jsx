@@ -58,7 +58,6 @@ function Navbar({
                 cartCount > 0 ? style.cartCount : style.cartCountNull
               }`}
             >
-              {' '}
               {cartCount}
             </span>
           </NavLink>

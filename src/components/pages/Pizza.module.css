@@ -69,7 +69,7 @@
   font-weight: 600;
   line-height: 24px;
 }
-.pizzaCard__footer button {
+.pizzaCard__footer Button {
   height: 40px;
   min-width: 120px;
   padding: 8px 20px;
@@ -93,7 +93,12 @@
   transition-duration: 200ms;
   transition-timing-function: ease-out;
 }
-
+.pizzaCard__footer Button:active {
+  background-color: rgb(255, 240, 230) !important;
+  color: rgb(209, 87, 0) !important;
+  border: none !important;
+  transform: translateY(2px);
+}
 .pizzaCard__footer button:hover {
   background-color: rgb(244, 193, 157);
 }
@@ -159,4 +164,14 @@ input {
   width: 400px;
   height: 48px;
   font-size: 16px;
+}
+.btnOrderToCart:hover {
+  background-color: rgb(247, 167, 114);
+  border: 5px solid rgba(7, 3, 0, 0);
+}
+
+.btnOrderToCart:active {
+  background-color: rgb(247, 167, 114) !important;
+  border: 5px solid rgba(7, 3, 0, 0) !important;
+  transform: translateY(2px);
 }
