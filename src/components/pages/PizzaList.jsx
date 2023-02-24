@@ -254,9 +254,7 @@ function PizzaList({
               </p>
             </Button>
           ) : (
-            <Button variant="secondary" disabled>
-              Please select size and dough type
-            </Button>
+            ''
           )}
         </Modal.Footer>
       </Modal>

@@ -16,8 +16,9 @@ function Navbar({
 }) {
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
   const [openCart, setOpenCart] = useState(false);
-  const handleBtnMenu = (btn, setBtn) => {
+  const handleCartMenu = (btn, setBtn) => {
     setBtn(!btn);
+    console.log('cart');
   };
 
   return (
@@ -26,7 +27,7 @@ function Navbar({
         <div className={style.logo}>
           <AiFillHome className={style.logo__icon} />
 
-          <span>Logo</span>
+          <span>React Pizza</span>
         </div>
         <ul className={`${style.navbar} ${openBurgerMenu ? style.open : ''}`}>
           <li>
@@ -44,11 +45,11 @@ function Navbar({
         </ul>
         <div>
           <NavLink
-            to="/#"
+            to="#"
             className={`${
               cartCount > 0 ? style.cartIconBtn : style.cartIconBtnNull
             } `}
-            onClick={() => handleBtnMenu(openCart, setOpenCart)}
+            onClick={() => handleCartMenu(openCart, setOpenCart)}
           >
             <span className={style.cartIcon}>
               <FaShoppingCart />
@@ -81,7 +82,7 @@ function Navbar({
           </div>
           <div className={style.burgerMenu} id={style.burgerMenu}>
             <GiHamburgerMenu
-              onClick={() => handleBtnMenu(openBurgerMenu, setOpenBurgerMenu)}
+              onClick={() => handleCartMenu(openBurgerMenu, setOpenBurgerMenu)}
             />
           </div>
         </div>
