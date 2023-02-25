@@ -2,7 +2,7 @@ import React from 'react';
 import { v4 as uuid } from 'uuid';
 import { useState } from 'react';
 import Pizza from './Pizza';
-import pizzas from '../data/data';
+import { pizzas } from '../data/data';
 import style from './Pizza.module.css';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';

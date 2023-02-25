@@ -1,4 +1,4 @@
-let pizzas = [
+export const pizzas = [
   {
     img: '/img/cheese.png',
     title: 'Margarita',
@@ -35,4 +35,13 @@ let pizzas = [
   },
 ];
 
-export default pizzas;
+export const drinks = [
+  { img: '/img/drinks/col_zero.jpeg', title: 'Coca-cola zero', price: 8 },
+  { img: '/img/drinks/cola_light.jpeg', title: 'Coca-cola light', price: 8 },
+  { img: '/img/drinks/cola.jpeg', title: 'Coca-cola', price: 8 },
+  { img: '/img/drinks/cola.jpeg', title: 'Coca-cola', price: 8 },
+  { img: '/img/drinks/7up.jpeg', title: '7up', price: 8 },
+  { img: '/img/drinks/7up.jpeg', title: '7up', price: 8 },
+  { img: '/img/drinks/col_zero.jpeg', title: 'Coca-cola zero', price: 8 },
+  { img: '/img/drinks/cola_light.jpeg', title: 'Coca-cola light', price: 8 },
+];

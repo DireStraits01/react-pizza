@@ -6,7 +6,7 @@ import CarouselBar from './components/CarouselBar';
 import Footer from './components/Footer';
 import PizzaList from './components/pages/PizzaList';
 import Contacts from './components/pages/Contacts';
-import Drinks from './components/pages/Drinks';
+import DrinksList from './components/pages/DrinksList';
 import Deserts from './components/pages/Deserts';
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
               />
             }
           />
-          <Route path="/drinks" element={<Drinks />} />
+          <Route path="/drinks" element={<DrinksList />} />
           <Route path="deserts" element={<Deserts />} />
           <Route path="contacts" element={<Contacts />} />
 
