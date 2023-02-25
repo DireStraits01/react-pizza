@@ -44,7 +44,7 @@ function PizzaList({
     }
   };
   /*function add pizza to cart or increasing units in the cart if such a product is already available*/
-  const handleAddtoCart = (img, title, price, size, dough) => {
+  const handleAddtoCartPizza = (img, title, price, size, dough) => {
     if (cart.length > 0) {
       let exist = false;
       setCart(
@@ -226,7 +226,7 @@ function PizzaList({
             <Button
               className={style.btnOrderToCart}
               onClick={() => {
-                handleAddtoCart(
+                handleAddtoCartPizza(
                   pizza.img,
                   pizza.title,
                   pizza.price[pizzaSize],

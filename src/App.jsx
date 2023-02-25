@@ -39,10 +39,12 @@ function App() {
               />
             }
           />
-          <Route path="/drinks" element={<DrinksList />} />
+          <Route
+            path="/drinks"
+            element={<DrinksList cart={cart} setCart={setCart} />}
+          />
           <Route path="deserts" element={<Deserts />} />
           <Route path="contacts" element={<Contacts />} />
-
           <Route path="/" element={<Footer />} />
         </Routes>
         <Footer />
