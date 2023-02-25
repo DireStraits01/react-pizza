@@ -1,5 +1,5 @@
 import React from 'react';
-import { v4 as uuid } from 'uuid';
+
 import { useState } from 'react';
 import Pizza from './Pizza';
 import { pizzas } from '../data/data';
@@ -14,9 +14,8 @@ function PizzaList({
   setCartCost,
   cartCount,
   setCartCount,
+  handleAddtoCart,
 }) {
-  const unique_id = uuid(); // funtion for unique id
-
   /*____________________pizza variables___________________________*/
   const [pizza, setPizza] = useState({
     img: '',
@@ -41,48 +40,6 @@ function PizzaList({
       return `${style.focusBtn}`;
     } else if (focusPizzaBtnDough === className) {
       return `${style.focusBtn}`;
-    }
-  };
-  /*function add pizza to cart or increasing units in the cart if such a product is already available*/
-  const handleAddtoCartPizza = (img, title, price, size, dough) => {
-    if (cart.length > 0) {
-      let exist = false;
-      setCart(
-        cart.map((el) => {
-          if (el.title === title && el.price === price && el.dough === dough) {
-            exist = true;
-            return { ...el, count: el.count + 1 };
-          } else {
-            return el;
-          }
-        })
-      );
-      if (!exist) {
-        setCart([
-          ...cart,
-          {
-            id: unique_id,
-            img: img,
-            title: title,
-            price: price,
-            count: 1,
-            size: size,
-            dough: dough,
-          },
-        ]);
-      }
-    } else {
-      setCart([
-        {
-          id: unique_id,
-          img: img,
-          title: title,
-          price: price,
-          count: 1,
-          size: size,
-          dough: dough,
-        },
-      ]);
     }
   };
 
@@ -226,7 +183,7 @@ function PizzaList({
             <Button
               className={style.btnOrderToCart}
               onClick={() => {
-                handleAddtoCartPizza(
+                handleAddtoCart(
                   pizza.img,
                   pizza.title,
                   pizza.price[pizzaSize],

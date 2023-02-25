@@ -1,3 +1,4 @@
+import { v4 as uuid } from 'uuid';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
@@ -13,6 +14,49 @@ function App() {
   const [cart, setCart] = useState([]);
   const [cartCost, setCartCost] = useState(0);
   const [cartCount, setCartCount] = useState(0);
+  const unique_id = uuid(); // funtion for unique id
+  /*function add pizza to cart or increasing units in the cart if such a product is already available*/
+  const handleAddtoCart = (img, title, price, size, dough) => {
+    if (cart.length > 0) {
+      let exist = false;
+      setCart(
+        cart.map((el) => {
+          if (el.title === title && el.price === price && el.dough === dough) {
+            exist = true;
+            return { ...el, count: el.count + 1 };
+          } else {
+            return el;
+          }
+        })
+      );
+      if (!exist) {
+        setCart([
+          ...cart,
+          {
+            id: unique_id,
+            img: img,
+            title: title,
+            price: price,
+            count: 1,
+            size: size,
+            dough: dough,
+          },
+        ]);
+      }
+    } else {
+      setCart([
+        {
+          id: unique_id,
+          img: img,
+          title: title,
+          price: price,
+          count: 1,
+          size: size,
+          dough: dough,
+        },
+      ]);
+    }
+  };
   return (
     <BrowserRouter>
       <div className="App">
@@ -36,6 +80,7 @@ function App() {
                 setCartCost={setCartCost}
                 cartCount={cartCount}
                 setCartCount={setCartCount}
+                handleAddtoCart={handleAddtoCart}
               />
             }
           />
