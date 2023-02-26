@@ -1,7 +1,14 @@
 import React from 'react';
 
 import style from './Drink.module.css';
-function Drink({ drink }) {
+function Drink({
+  drink,
+  handleAddtoCartDrink,
+  cartCost,
+  setCartCost,
+  cartCount,
+  setCartCount,
+}) {
   return (
     <>
       <div className={style.drinkBody}>
@@ -9,7 +16,15 @@ function Drink({ drink }) {
         <h4>{drink.title}</h4>
         <div className={style.priceBtn}>
           <span> ${drink.price}</span>
-          <button>Add to Cart</button>
+          <button
+            onClick={() => {
+              handleAddtoCartDrink(drink.img, drink.title, drink.price);
+              setCartCost(cartCost + drink.price);
+              setCartCount(cartCount + 1);
+            }}
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </>

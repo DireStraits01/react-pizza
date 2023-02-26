@@ -74,8 +74,6 @@ function App() {
             index
             element={
               <PizzaList
-                cart={cart}
-                setCart={setCart}
                 cartCost={cartCost}
                 setCartCost={setCartCost}
                 cartCount={cartCount}
@@ -86,7 +84,15 @@ function App() {
           />
           <Route
             path="/drinks"
-            element={<DrinksList cart={cart} setCart={setCart} />}
+            element={
+              <DrinksList
+                handleAddtoCart={handleAddtoCart}
+                cartCost={cartCost}
+                setCartCost={setCartCost}
+                cartCount={cartCount}
+                setCartCount={setCartCount}
+              />
+            }
           />
           <Route path="deserts" element={<Deserts />} />
           <Route path="contacts" element={<Contacts />} />

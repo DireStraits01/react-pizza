@@ -2,12 +2,8 @@ import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
 function CarouselBar() {
-  const myStyle = {
-    height: '64px',
-  };
   return (
     <>
-      <div style={myStyle}></div>
       <Carousel>
         <Carousel.Item>
           <div

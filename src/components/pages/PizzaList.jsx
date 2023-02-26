@@ -8,8 +8,6 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
 function PizzaList({
-  cart,
-  setCart,
   cartCost,
   setCartCost,
   cartCount,
