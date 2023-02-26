@@ -9,4 +9,5 @@ body {
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   background-color: rgb(255, 255, 255);
   min-height: 100vh;
+  overflow-x: hidden;
 }
