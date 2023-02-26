@@ -31,7 +31,8 @@ function Navbar({
       <div className={style.infoHeader}>
         <p>
           <MdDeliveryDining style={{ fontSize: '20px' }} /> Average delivery
-          time this week 00:26:28
+          time this week
+          <span className={style.bestTimeDelivery}> 00:26:28</span>
         </p>
         <span>Tel:(703) 256-0800</span>
       </div>
@@ -84,23 +85,24 @@ function Navbar({
               {cartCount}
             </span>
           </NavLink>
-
           <div className={`${style.cart} ${openCart ? style.open : ''}`}>
-            <span>${cartCost}</span>
-            {cart.map((itemInCart, index) => {
-              return (
-                <Cart
-                  cart={itemInCart}
-                  key={index}
-                  setCart={setCart}
-                  cartArray={cart}
-                  setCartCost={setCartCost}
-                  cartCost={cartCost}
-                  cartCount={cartCount}
-                  setCartCount={setCartCount}
-                />
-              );
-            })}
+            <div className={style.cartScroll}>
+              {cart.map((itemInCart, index) => {
+                return (
+                  <Cart
+                    cart={itemInCart}
+                    key={index}
+                    setCart={setCart}
+                    cartArray={cart}
+                    setCartCost={setCartCost}
+                    cartCost={cartCost}
+                    cartCount={cartCount}
+                    setCartCount={setCartCount}
+                  />
+                );
+              })}
+            </div>
+            <button>${cartCost} &#8594;</button>
           </div>
           <div className={style.burgerMenu} id={style.burgerMenu}>
             <GiHamburgerMenu

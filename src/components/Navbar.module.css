@@ -26,6 +26,9 @@
   font-size: 15px;
   color: var(--text-color);
 }
+.bestTimeDelivery {
+  color: rgb(255, 105, 0) !important;
+}
 header {
   position: sticky;
   width: 100%;
@@ -73,7 +76,6 @@ header {
   align-items: center;
 }
 .iconMenu {
-  /* color: var(--main-color); */
   font-size: 1.1rem;
   font-weight: 500;
   margin-right: 4px;
@@ -104,15 +106,20 @@ header {
 /*----------------Cart style------------------*/
 
 .cart {
-  background-color: rgba(225, 225, 225, 0.85);
+  background-color: rgba(225, 225, 225, 5);
   position: absolute;
   transition: all 0.5s ease;
   top: 100%;
   right: -100%;
   width: 350px;
-  height: 90vh;
+  height: 85vh;
   z-index: 5;
+  text-align: center;
+}
+.cartScroll {
   overflow: scroll;
+  height: 75vh;
+  background-color: var(--main-color);
 }
 .cartIconBtn {
   display: flex;
@@ -166,11 +173,12 @@ header {
 }
 
 .iteminCartWraper {
-  background-color: var(--background-color-item);
   display: flex;
+  border: 1px solid var(--main-color);
   margin: 1px;
   padding: 8px;
   border-radius: 5%;
+  background-color: var(--background-color-item);
 }
 
 .iteminCartWraper:first-child {
@@ -237,9 +245,20 @@ header {
   transition: all 0.1s ease;
 }
 .open {
-  right: 0.5%;
+  right: 0%;
 }
+/*____________Cart footer_____________*/
 
+.cart button {
+  background-color: rgb(255, 105, 0);
+  border: 5px solid rgba(7, 3, 0, 0);
+  border-radius: 9999px;
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+  color: #fff;
+}
+/*__________________________________*/
 @media (max-width: 1280px) {
   header {
     padding: 14px 2%;
