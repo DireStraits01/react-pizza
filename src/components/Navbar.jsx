@@ -30,7 +30,7 @@ function Navbar({
     <>
       <div className={style.infoHeader}>
         <p>
-          <MdDeliveryDining style={{ fontSize: '28px' }} /> Average delivery
+          <MdDeliveryDining style={{ fontSize: '20px' }} /> Average delivery
           time this week 00:26:28
         </p>
         <span>Tel:(703) 256-0800</span>
