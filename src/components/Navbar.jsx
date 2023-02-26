@@ -87,20 +87,27 @@ function Navbar({
           </NavLink>
           <div className={`${style.cart} ${openCart ? style.open : ''}`}>
             <div className={style.cartScroll}>
-              {cart.map((itemInCart, index) => {
-                return (
-                  <Cart
-                    cart={itemInCart}
-                    key={index}
-                    setCart={setCart}
-                    cartArray={cart}
-                    setCartCost={setCartCost}
-                    cartCost={cartCost}
-                    cartCount={cartCount}
-                    setCartCount={setCartCount}
-                  />
-                );
-              })}
+              {cart.length > 0 ? (
+                cart.map((itemInCart, index) => {
+                  return (
+                    <Cart
+                      cart={itemInCart}
+                      key={index}
+                      setCart={setCart}
+                      cartArray={cart}
+                      setCartCost={setCartCost}
+                      cartCost={cartCost}
+                      cartCount={cartCount}
+                      setCartCount={setCartCount}
+                    />
+                  );
+                })
+              ) : (
+                <div className={style.ifCartEmpty}>
+                  <img src="/img/empty-box.jpeg" alt="" width={'60%'} />
+                  <p>oops...</p>
+                </div>
+              )}
             </div>
             <button>${cartCost} &#8594;</button>
           </div>
