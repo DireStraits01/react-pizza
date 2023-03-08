@@ -6,6 +6,7 @@ import { pizzas } from '../data/data';
 import style from './Pizza.module.css';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import CarouselBar from '../../components/CarouselBar';
 
 function PizzaList({
   cartCost,
@@ -46,6 +47,7 @@ function PizzaList({
 
   return (
     <>
+      <CarouselBar />
       {/*==============================================Pizza list================================*/}
       <div className={style.pizzaList}>
         {pizzas.map((pizza, index) => (

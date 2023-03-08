@@ -1,14 +1,12 @@
 import { v4 as uuid } from 'uuid';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
-import CarouselBar from './components/CarouselBar';
-import Footer from './components/Footer';
 import PizzaList from './components/pages/PizzaList';
 import Contacts from './components/pages/Contacts';
 import DrinksList from './components/pages/DrinksList';
 import Deserts from './components/pages/Deserts';
+import Layout from './components/Layout';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -58,18 +56,21 @@ function App() {
     }
   };
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar
-          cart={cart}
-          setCart={setCart}
-          cartCost={cartCost}
-          setCartCost={setCartCost}
-          cartCount={cartCount}
-          setCartCount={setCartCount}
-        />
-        <CarouselBar />
-        <Routes>
+    <div className="App">
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout
+              cart={cart}
+              setCart={setCart}
+              cartCost={cartCost}
+              setCartCost={setCartCost}
+              cartCount={cartCount}
+              setCartCount={setCartCount}
+            />
+          }
+        >
           <Route
             index
             element={
@@ -96,11 +97,9 @@ function App() {
           />
           <Route path="deserts" element={<Deserts />} />
           <Route path="contacts" element={<Contacts />} />
-          <Route path="/" element={<Footer />} />
-        </Routes>
-        <Footer />
-      </div>
-    </BrowserRouter>
+        </Route>
+      </Routes>
+    </div>
   );
 }
 

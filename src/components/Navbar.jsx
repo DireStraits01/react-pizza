@@ -8,7 +8,7 @@ import { TfiHeadphoneAlt } from 'react-icons/tfi';
 import { MdDeliveryDining } from 'react-icons/md';
 import React, { useState } from 'react';
 import style from './Navbar.module.css';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import Cart from './Cart';
 
 function Navbar({
@@ -44,7 +44,7 @@ function Navbar({
         </div>
         <ul className={`${style.navbar} ${openBurgerMenu ? style.open : ''}`}>
           <li>
-            <NavLink to="/" className={style.navlink}>
+            <NavLink end to="/" className={style.navlink}>
               <GiFullPizza className={style.iconMenu} /> Pizza
             </NavLink>
           </li>
@@ -67,8 +67,9 @@ function Navbar({
           </li>
         </ul>
         <div>
-          <NavLink
-            to="#"
+          <Link
+            end
+            to="/"
             className={`${
               cartCount > 0 ? style.cartIconBtn : style.cartIconBtnNull
             } `}
@@ -84,7 +85,7 @@ function Navbar({
             >
               {cartCount}
             </span>
-          </NavLink>
+          </Link>
           <div className={`${style.cart} ${openCart ? style.open : ''}`}>
             <div className={style.cartScroll}>
               {cart.length > 0 ? (
@@ -118,7 +119,6 @@ function Navbar({
           </div>
         </div>
       </header>
-      <Outlet />
     </>
   );
 }

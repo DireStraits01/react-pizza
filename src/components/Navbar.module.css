@@ -89,13 +89,6 @@ header {
   color: var(--main-color);
 }
 
-.navbar a:active {
-  color: var(--background-color);
-}
-.navbar a:active .iconMenu {
-  color: var(--background-color);
-}
-
 #burgerMenu svg {
   font-size: 35px;
   color: var(--text-color);
@@ -107,10 +100,10 @@ header {
 .ifCartEmpty {
   margin-top: 50%;
 }
+
 /*----------------Cart style------------------*/
 
 .cart {
-  background-color: rgba(225, 225, 225, 5);
   background-color: #fff;
   position: absolute;
   transition: all 0.5s ease;
@@ -252,6 +245,17 @@ header {
 .open {
   right: 0%;
 }
+
+::-webkit-scrollbar {
+  background-color: #fff;
+
+  width: 7px;
+}
+body::-webkit-scrollbar-thumb,
+.cartScroll::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+}
+
 /*____________Cart footer_____________*/
 
 .cart button {
