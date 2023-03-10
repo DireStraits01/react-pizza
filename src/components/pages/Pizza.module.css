@@ -103,16 +103,26 @@
   background-color: rgb(244, 193, 157);
 }
 
+/*__________________Modal style______________*/
+
 .modalStyle {
-  height: 500px !important;
+  height: 400px !important;
+  display: flex;
 }
+
+.modalBodyContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .orderItem {
   display: flex;
   align-items: center;
 }
 
 .orderItem_options {
-  padding: 20px 200px;
+  padding: 20px 20px;
 }
 .picca_size,
 .doughThickness {
@@ -136,7 +146,6 @@ label {
   font-weight: normal;
   text-align: center;
   height: 32px;
-
   transition: color 150ms ease 0s;
 }
 
@@ -158,6 +167,8 @@ input {
   box-shadow: -2px 1px 20px -8px rgba(0, 0, 0, 0.73);
 }
 .btnOrderToCart {
+  padding: 10px;
+  margin-top: 50px;
   background-color: rgb(255, 105, 0);
   border: 5px solid rgba(7, 3, 0, 0);
   border-radius: 9999px;

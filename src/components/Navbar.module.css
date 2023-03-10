@@ -173,6 +173,7 @@ header {
 .iteminCartWraper {
   display: flex;
   border: 1px solid var(--main-color);
+  border: none;
   margin: 1px;
   padding: 8px;
   border-radius: 5%;

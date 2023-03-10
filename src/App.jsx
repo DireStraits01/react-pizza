@@ -5,8 +5,8 @@ import './App.css';
 import PizzaList from './components/pages/PizzaList';
 import Contacts from './components/pages/Contacts';
 import DrinksList from './components/pages/DrinksList';
-import Deserts from './components/pages/Deserts';
 import Layout from './components/Layout';
+import DessertList from './components/pages/DessertList';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -95,7 +95,7 @@ function App() {
               />
             }
           />
-          <Route path="deserts" element={<Deserts />} />
+          <Route path="deserts" element={<DessertList />} />
           <Route path="contacts" element={<Contacts />} />
         </Route>
       </Routes>

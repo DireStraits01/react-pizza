@@ -14,4 +14,5 @@ body {
 }
 .active {
   color: rgb(255, 105, 0) !important;
+  text-decoration: none;
 }

@@ -38,9 +38,10 @@ function Navbar({
       </div>
       <header>
         <div className={style.logo}>
-          <FaReact className={style.logo__icon} />
-
-          <span>React Pizza</span>
+          <NavLink to="/">
+            <FaReact className={style.logo__icon} />
+            <span>React Pizza</span>
+          </NavLink>
         </div>
         <ul className={`${style.navbar} ${openBurgerMenu ? style.open : ''}`}>
           <li>
@@ -49,7 +50,7 @@ function Navbar({
             </NavLink>
           </li>
           <li>
-            <NavLink to="drinks" className={style.navlink}>
+            <NavLink to="Drinks" className={style.navlink}>
               <FaGlassWhiskey className={style.iconMenu} />
               Drinks
             </NavLink>
@@ -61,15 +62,15 @@ function Navbar({
             </NavLink>
           </li>
           <li>
-            <NavLink to="contacts" className={style.navlink}>
-              <TfiHeadphoneAlt className={style.iconMenu} /> Contact
+            <NavLink to="Contacts" className={style.navlink}>
+              <TfiHeadphoneAlt className={style.iconMenu} /> Contacts
             </NavLink>
           </li>
         </ul>
         <div>
           <Link
             end
-            to="/"
+            to="#"
             className={`${
               cartCount > 0 ? style.cartIconBtn : style.cartIconBtnNull
             } `}

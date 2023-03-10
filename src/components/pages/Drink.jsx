@@ -13,7 +13,7 @@ function Drink({
     <>
       <div className={style.drinkBody}>
         <img src={drink.img} alt="" style={{ height: '250px' }} />
-        <h4>{drink.title}</h4>
+        <h3>{drink.title}</h3>
         <div className={style.priceBtn}>
           <span> ${drink.price}</span>
           <button

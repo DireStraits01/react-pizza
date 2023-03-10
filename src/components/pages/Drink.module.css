@@ -20,6 +20,19 @@
   flex-basis: calc(25% - 20px);
 }
 
+.drinkBody h3 {
+  margin: 15px 0px;
+  margin-top: -10px;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  text-align: center;
+  line-height: 24px;
+  font-family: system-ui, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-weight: 500;
+}
+
 .priceBtn {
   width: 100%;
   display: flex;
@@ -33,7 +46,7 @@
   font-family: system-ui, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-weight: 600;
-  line-height: 24px;
+  line-height: 20px;
 }
 .priceBtn button {
   height: 40px;

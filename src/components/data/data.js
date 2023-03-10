@@ -81,12 +81,43 @@ export const pizzas = [
 ];
 
 export const drinks = [
-  { img: '/img/drinks/col_zero.jpeg', title: 'Coca-cola zero', price: 8 },
-  { img: '/img/drinks/cola_light.jpeg', title: 'Coca-cola light', price: 8 },
-  { img: '/img/drinks/cola.jpeg', title: 'Coca-cola', price: 8 },
-  { img: '/img/drinks/cola.jpeg', title: 'Coca-cola', price: 8 },
+  { img: '/img/drinks/col_zero.jpeg', title: 'Coca-Cola zero', price: 8 },
+  { img: '/img/drinks/cola_light.jpeg', title: 'Coca-Cola light', price: 8 },
+  { img: '/img/drinks/cola.jpeg', title: 'Coca-Cola', price: 8 },
+  { img: '/img/drinks/cola.jpeg', title: 'Coca-Cola', price: 8 },
   { img: '/img/drinks/7up.jpeg', title: '7up', price: 8 },
   { img: '/img/drinks/7up.jpeg', title: '7up', price: 8 },
-  { img: '/img/drinks/col_zero.jpeg', title: 'Coca-cola zero', price: 8 },
-  { img: '/img/drinks/cola_light.jpeg', title: 'Coca-cola light', price: 8 },
+  { img: '/img/drinks/col_zero.jpeg', title: 'Coca-Cola zero', price: 8 },
+  { img: '/img/drinks/cola_light.jpeg', title: 'Coca-Cola light', price: 8 },
+];
+
+export const desserts = [
+  {
+    img: '/img/desserts/RU.png',
+    title: 'Curls with apricot',
+    description:
+      'Portion 8 pcs. Hot sweet apricot curls sprinkled with powdered sugar.',
+    price: 5,
+  },
+  {
+    img: '/img/desserts/RU1.png',
+    title: 'Blackcurrant curls',
+    description:
+      'Portion 8 pcs. Sweet and tender blackcurrant curls sprinkled with powdered sugar.',
+    price: 5,
+  },
+  {
+    img: '/img/desserts/RU2.png',
+    title: 'Dessert Chocolate lava',
+    description:
+      'Delicate crispy souffle stuffed with hot chocolate, sprinkled with a thin layer of sugar.',
+    price: 8,
+  },
+  {
+    img: '/img/desserts/RU3.png',
+    title: 'Dessert Pistachio-raspberry',
+    description:
+      'Light, delicately airy dessert with pistachio-raspberry flavor. Portion - 90 grams.',
+    price: 7,
+  },
 ];
