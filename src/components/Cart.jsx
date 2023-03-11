@@ -56,9 +56,11 @@ function Cart({
         <div className={style.iteminCartInfo}>
           <div className={style.itemInCartTextInfo}>
             <h5>{cart.title}</h5>
-            <p>
-              {cart.dough}&nbsp;dough&nbsp;,{cart.size}&nbsp;size.
-            </p>
+            {cart.dough && (
+              <p>
+                {cart.dough}&nbsp;dough&nbsp;,{cart.size}&nbsp;size.
+              </p>
+            )}
           </div>
           <hr />
           <div className={style.iteminCartPriceInfo}>

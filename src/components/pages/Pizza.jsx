@@ -5,7 +5,15 @@ function Pizza({ pizza, handlePizzaModal, handleShow }) {
   return (
     <>
       <div className={style.pizzaCard}>
-        <img src={pizza.img} alt="" onClick={handleShow} />
+        <img
+          src={pizza.img}
+          alt=""
+          onClick={() => {
+            handleShow();
+
+            handlePizzaModal(pizza);
+          }}
+        />
         <h3>{pizza.title}</h3>
         <p>{pizza.ingredients}</p>
         <div className={style.pizzaCard__footer}>

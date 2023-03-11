@@ -121,3 +121,12 @@ export const desserts = [
     price: 7,
   },
 ];
+
+export const contacts = [
+  { title: 'Support', contact: 'Tel (703) 256-0800' },
+  { title: 'location', contact: '81 Pope Avenue,Hilton Head Island, SC 29928' },
+  { title: 'Press service contacts', contact: 'press@reactpizza.com' },
+  { title: 'For corporate orders', contact: 'b2b@reactpizza.com' },
+  { title: 'for rent', contact: 'rent@reactpizza.com' },
+  { title: 'purchasing department', contact: 'pr@reactpizza.com' },
+];

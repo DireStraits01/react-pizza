@@ -34,7 +34,17 @@ function Navbar({
           time this week
           <span className={style.bestTimeDelivery}> 00:26:28</span>
         </p>
-        <span>Tel:(703) 256-0800</span>
+        <p>
+          NY Tel:
+          <span className={style.bestTimeDelivery}> (703) 256-0800</span>{' '}
+        </p>
+
+        <span>
+          <p>
+            Sunday-Saturday
+            <span className={style.bestTimeDelivery}> 11:00 AM – 00:00 PM</span>
+          </p>
+        </span>
       </div>
       <header>
         <div className={style.logo}>

@@ -8,8 +8,7 @@
 }
 
 .drinksCart {
-  margin-top: 10px;
-  margin-left: 5%;
+  margin-left: 10%;
   margin-right: 5%;
   display: flex;
   justify-content: space-between;
@@ -22,7 +21,7 @@
 
 .drinkBody h3 {
   margin: 15px 0px;
-  margin-top: -10px;
+  margin-top: -8px;
   width: 100%;
   color: rgb(0, 0, 0);
   font-size: 20px;

@@ -84,7 +84,7 @@ function App() {
             }
           />
           <Route
-            path="/drinks"
+            path="drinks"
             element={
               <DrinksList
                 handleAddtoCart={handleAddtoCart}
@@ -95,7 +95,18 @@ function App() {
               />
             }
           />
-          <Route path="deserts" element={<DessertList />} />
+          <Route
+            path="deserts"
+            element={
+              <DessertList
+                handleAddtoCart={handleAddtoCart}
+                cartCost={cartCost}
+                setCartCost={setCartCost}
+                cartCount={cartCount}
+                setCartCount={setCartCount}
+              />
+            }
+          />
           <Route path="contacts" element={<Contacts />} />
         </Route>
       </Routes>
