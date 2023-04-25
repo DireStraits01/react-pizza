@@ -36,7 +36,7 @@ function Navbar({
         </p>
         <p>
           NY Tel:
-          <span className={style.bestTimeDelivery}> (703) 256-0800</span>{' '}
+          <span className={style.bestTimeDelivery}> (703) 256-0800</span>
         </p>
 
         <span>
