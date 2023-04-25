@@ -6,7 +6,7 @@ function Contacts() {
     <>
       <div className={style.container}>
         {contacts.map((contact, index) => (
-          <div className={style.contacts}>
+          <div className={style.contacts} key={index}>
             <h4>{contact.title}</h4>
             <p>{contact.contact}</p>
           </div>

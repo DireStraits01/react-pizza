@@ -55,7 +55,7 @@ function Navbar({
         </div>
         <ul className={`${style.navbar} ${openBurgerMenu ? style.open : ''}`}>
           <li>
-            <NavLink end to="/" className={style.navlink}>
+            <NavLink end="true" to="/" className={style.navlink}>
               <GiFullPizza className={style.iconMenu} /> Pizza
             </NavLink>
           </li>
@@ -79,7 +79,7 @@ function Navbar({
         </ul>
         <div>
           <Link
-            end
+            end="true"
             to="#"
             className={`${
               cartCount > 0 ? style.cartIconBtn : style.cartIconBtnNull
