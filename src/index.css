@@ -9,8 +9,7 @@ body {
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   background-color: rgb(255, 255, 255);
   min-height: 100vh;
-  padding-right: -16px;
-  overflow-x: hidden;
+  min-width: 100vh;
 }
 .active {
   color: rgb(255, 105, 0) !important;
