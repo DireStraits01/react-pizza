@@ -107,14 +107,16 @@ header {
   background-color: #fff;
   position: absolute;
   transition: all 0.5s ease;
+  /* display: none; */
   top: 100%;
-  right: -100%;
   width: 350px;
   height: 100vh;
+  right: 100%;
   z-index: 5;
   text-align: center;
   border-left: 1px solid var(--main-color);
 }
+
 .cartScroll {
   overflow: scroll;
   height: 75vh;
@@ -334,6 +336,6 @@ body::-webkit-scrollbar-thumb,
   }
 
   .open {
-    right: 2%;
+    right: 0%;
   }
 }
