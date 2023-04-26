@@ -287,6 +287,7 @@ body::-webkit-scrollbar-thumb,
     line-height: 2px;
     font-size: 15px;
   }
+
   .navbar a {
     padding: 5px 0;
     margin: 0px 20px;
@@ -294,6 +295,15 @@ body::-webkit-scrollbar-thumb,
 }
 
 @media (max-width: 1090px) {
+  .burgerMenuAndCart {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: none;
+  }
   #burgerMenu svg {
     display: block;
   }
