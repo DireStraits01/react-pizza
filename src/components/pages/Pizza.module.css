@@ -196,19 +196,22 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 250px !important;
   }
   .orderItemProduct {
-    width: 50%;
+    display: none;
   }
   .modalSize {
-    width: 90%;
   }
   .orderItemText {
     font-size: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding: 0;
   }
+
   .orderItemText p {
     font-size: 8px;
   }
