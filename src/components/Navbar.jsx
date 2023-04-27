@@ -23,7 +23,6 @@ function Navbar({
   const [openCart, setOpenCart] = useState(false);
   const handleCartMenu = (btn, setBtn) => {
     setBtn(!btn);
-    console.log('cart');
   };
 
   return (
@@ -55,24 +54,53 @@ function Navbar({
         </div>
         <ul className={`${style.navbar} ${openBurgerMenu ? style.open : ''}`}>
           <li>
-            <NavLink end="true" to="/" className={style.navlink}>
+            <NavLink
+              end="true"
+              to="/"
+              className={style.navlink}
+              onClick={() => {
+                setOpenBurgerMenu(false);
+                window.scrollTo(0, 0);
+              }}
+            >
               <GiFullPizza className={style.iconMenu} /> Pizza
             </NavLink>
           </li>
           <li>
-            <NavLink to="Drinks" className={style.navlink}>
+            <NavLink
+              to="Drinks"
+              className={style.navlink}
+              onClick={() => {
+                setOpenBurgerMenu(false);
+                window.scrollTo(0, 0);
+              }}
+            >
               <FaGlassWhiskey className={style.iconMenu} />
               Drinks
             </NavLink>
           </li>
           <li>
-            <NavLink to="deserts" className={style.navlink}>
+            <NavLink
+              to="deserts"
+              className={style.navlink}
+              onClick={() => {
+                setOpenBurgerMenu(false);
+                window.scrollTo(0, 0);
+              }}
+            >
               <GiCupcake className={style.iconMenu} />
               Desserts
             </NavLink>
           </li>
           <li>
-            <NavLink to="Contacts" className={style.navlink}>
+            <NavLink
+              to="Contacts"
+              className={style.navlink}
+              onClick={() => {
+                setOpenBurgerMenu(false);
+                window.scrollTo(0, 0);
+              }}
+            >
               <TfiHeadphoneAlt className={style.iconMenu} /> Contacts
             </NavLink>
           </li>
