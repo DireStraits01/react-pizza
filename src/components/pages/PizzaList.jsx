@@ -69,6 +69,7 @@ function PizzaList({
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
+        className={style.modalSize}
       >
         <Modal.Header
           closeButton
