@@ -32,10 +32,10 @@ function Footer() {
               <div className={style.col}>
                 <h5>Services</h5>
                 <ul>
-                  <li>IT Consulting -</li>
+                  <li>IT Consulting</li>
                   <li>Development</li>
                   <li>Cloud</li>
-                  <li>DevOps & Support</li>
+                  <li>Support</li>
                 </ul>
               </div>
 

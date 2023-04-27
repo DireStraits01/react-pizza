@@ -12,12 +12,13 @@
   background-color: rgb(255, 105, 0);
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .orangeLine p {
   color: rgb(255, 255, 255);
-  margin-left: 10%;
   font-size: 18px;
+  padding: 10px;
 }
 
 .row {
@@ -52,9 +53,32 @@
   align-items: center;
 }
 
+.col ul {
+  margin-right: 15px;
+  margin-left: 15px;
+  text-align: center;
+  padding: 0;
+}
+
 hr {
   background-color: #646771;
   height: 5px;
   width: 90%;
   margin: 0 auto;
+}
+@media (max-width: 1090px) {
+  .orangeLine p {
+    font-size: 12px;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .col h5 {
+    font-size: 12px;
+  }
+
+  .col ul li {
+    font-size: 8px;
+  }
 }
