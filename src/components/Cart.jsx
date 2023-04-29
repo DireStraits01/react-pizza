@@ -56,6 +56,7 @@ function Cart({
         <div className={style.iteminCartInfo}>
           <div className={style.itemInCartTextInfo}>
             <h5>{cart.title}</h5>
+
             {cart.dough && (
               <p>
                 {cart.dough}&nbsp;dough&nbsp;,{cart.size}&nbsp;size.

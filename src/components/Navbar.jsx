@@ -21,6 +21,7 @@ function Navbar({
 }) {
   const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
   const [openCart, setOpenCart] = useState(false);
+
   const handleCartMenu = (btn, setBtn) => {
     setBtn(!btn);
   };
@@ -155,7 +156,16 @@ function Navbar({
                   </div>
                 )}
               </div>
-              <button>${cartCost} &#8594;</button>
+              <div
+                onClick={() => {
+                  setOpenCart(false);
+                  window.scrollTo(0, 0);
+                }}
+              >
+                <Link to="order">
+                  <button>${cartCost} &#8594;</button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

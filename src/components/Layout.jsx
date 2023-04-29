@@ -10,6 +10,8 @@ function Layout({
   setCartCost,
   cartCount,
   setCartCount,
+  // items,
+  // setItems,
 }) {
   return (
     <>
@@ -20,6 +22,8 @@ function Layout({
         setCartCost={setCartCost}
         cartCount={cartCount}
         setCartCount={setCartCount}
+        // items={items}
+        // setItems={setItems}
       />
       <Outlet />
       <Footer />
