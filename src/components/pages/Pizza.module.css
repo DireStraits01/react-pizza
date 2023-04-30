@@ -156,7 +156,7 @@ label:hover {
   box-shadow: -2px 1px 20px -8px rgba(0, 0, 0, 0.73);
 }
 
-input {
+.orderItem_options input {
   display: none;
 }
 

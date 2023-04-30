@@ -10,6 +10,7 @@ import React, { useState } from 'react';
 import style from './Navbar.module.css';
 import { NavLink, Link } from 'react-router-dom';
 import Cart from './Cart';
+import Authentication from './Authentication';
 
 function Navbar({
   cart,
@@ -29,22 +30,24 @@ function Navbar({
   return (
     <>
       <div className={style.infoHeader}>
-        <p>
-          <MdDeliveryDining style={{ fontSize: '20px' }} /> Average delivery
-          time this week
-          <span className={style.bestTimeDelivery}> 00:26:28</span>
-        </p>
-        <p>
-          NY Tel:
-          <span className={style.bestTimeDelivery}> (703) 256-0800</span>
-        </p>
-
-        <span>
+        <div className={style.textInfoHeader}>
+          <p>
+            <MdDeliveryDining style={{ fontSize: '20px' }} /> Average delivery
+            time this week
+            <span className={style.bestTimeDelivery}> 00:26:28</span>
+          </p>
+          <p>
+            NY Tel:
+            <span className={style.bestTimeDelivery}> (703) 256-0800</span>
+          </p>
           <p>
             Sunday-Saturday
             <span className={style.bestTimeDelivery}> 11:00 AM – 00:00 PM</span>
           </p>
-        </span>
+        </div>
+        <div className={style.authenInfoHeader}>
+          <Authentication />
+        </div>
       </div>
       <header>
         <div className={style.logo}>
