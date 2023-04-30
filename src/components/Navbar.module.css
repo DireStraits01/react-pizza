@@ -317,7 +317,8 @@ body::-webkit-scrollbar-thumb,
     transition: 0.5s;
   }
   .infoHeader {
-    height: 250px;
+    height: 300px;
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;

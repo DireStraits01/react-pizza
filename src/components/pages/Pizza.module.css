@@ -187,11 +187,12 @@ label:hover {
   transform: translateY(2px);
 }
 @media (max-width: 1090px) {
-  .pizzaList {
+  /* .pizzaList {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+  } */
+
   .modalStyle {
     flex-direction: column;
     justify-content: center;
@@ -201,8 +202,7 @@ label:hover {
   .orderItemProduct {
     display: none;
   }
-  .modalSize {
-  }
+
   .orderItemText {
     font-size: 10px;
     display: flex;
@@ -225,5 +225,44 @@ label:hover {
     width: 50%;
     height: 15%;
     font-size: 8px;
+  }
+}
+@media (max-width: 500px) {
+  .pizzaCard {
+    height: 200px;
+    width: 300px;
+    /* padding: 20px; */
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+  }
+  .pizzaCard img {
+    width: 40%;
+  }
+  .pizzaCard h3 {
+    margin: 2px 0px;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-align: start;
+    line-height: 24px;
+    font-family: system-ui, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-weight: 500;
+  }
+  .pizzaCard p {
+    font-size: 10px;
+  }
+  .pizzaCard span {
+    font-size: 12px;
+  }
+  .pizzaCard__footer Button {
+    height: 20px;
+    min-width: 40px;
+    padding: 8px 20px;
+    font-size: 10px;
+    line-height: 5px;
   }
 }

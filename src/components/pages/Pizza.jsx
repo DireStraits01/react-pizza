@@ -14,19 +14,23 @@ function Pizza({ pizza, handlePizzaModal, handleShow }) {
             handlePizzaModal(pizza);
           }}
         />
-        <h3>{pizza.title}</h3>
-        <p>{pizza.ingredients}</p>
-        <div className={style.pizzaCard__footer}>
-          <span className={style.pizzaCard__price}>${pizza.price.medium}</span>
-          <Button
-            onClick={() => {
-              handleShow();
+        <div className={style.pizzaDescription}>
+          <h3>{pizza.title}</h3>
+          <p>{pizza.ingredients}</p>
+          <div className={style.pizzaCard__footer}>
+            <span className={style.pizzaCard__price}>
+              ${pizza.price.medium}
+            </span>
+            <Button
+              onClick={() => {
+                handleShow();
 
-              handlePizzaModal(pizza);
-            }}
-          >
-            show
-          </Button>
+                handlePizzaModal(pizza);
+              }}
+            >
+              show
+            </Button>
+          </div>
         </div>
       </div>
     </>
