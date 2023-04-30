@@ -81,7 +81,6 @@ header {
   cursor: pointer;
   text-decoration: none;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 .iconMenu {
@@ -96,14 +95,6 @@ header {
 
 .navbar a:hover .iconMenu {
   color: var(--main-color);
-}
-
-#burgerMenu svg {
-  font-size: 35px;
-  color: var(--text-color);
-  z-index: 10001;
-  cursor: pointer;
-  display: none;
 }
 
 .ifCartEmpty {
@@ -343,44 +334,25 @@ body::-webkit-scrollbar-thumb,
 }
 
 @media (max-width: 1090px) {
-  .navbar {
-    background-color: var(--background-color);
-    position: absolute;
-    display: flex;
+  header {
     flex-direction: column;
-    justify-content: flex-start;
-    border-radius: 10px;
-    transition: all 0.5s ease;
-    top: 100%;
-    right: 100%;
-    width: 270px;
-    height: 70vh;
   }
-
-  .navbar a {
-    display: block;
-    margin: 12px 0;
-    padding: 0 25px;
-    transition: all 0.5 ease;
-  }
-  .navbar a:hover {
-    color: var(--main-color);
-    transform: translateY(5px);
-  }
-  .burgerMenuAndCart {
+  .handleCart {
     display: flex;
+    justify-content: flex-start;
     width: 100%;
-    align-items: center;
+  }
+  .navbar {
+    width: 100%;
     justify-content: space-between;
   }
-  .logo {
-    display: none;
-  }
-  #burgerMenu svg {
-    display: block;
+  .navbar a {
+    font-size: 0.8rem;
+    padding: 0;
+    margin: 0;
   }
 
-  .open {
-    right: 0%;
+  .logo {
+    display: none;
   }
 }

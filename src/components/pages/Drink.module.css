@@ -81,3 +81,6 @@
   border: none !important;
   transform: translateY(2px);
 }
+
+@media (max-width: 1090px) {
+}

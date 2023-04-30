@@ -1,5 +1,4 @@
 import { FaReact } from 'react-icons/fa';
-import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaShoppingCart } from 'react-icons/fa';
 import { GiFullPizza } from 'react-icons/gi';
 import { FaGlassWhiskey } from 'react-icons/fa';
@@ -20,7 +19,6 @@ function Navbar({
   cartCount,
   setCartCount,
 }) {
-  const [openBurgerMenu, setOpenBurgerMenu] = useState(false);
   const [openCart, setOpenCart] = useState(false);
 
   const handleCartMenu = (btn, setBtn) => {
@@ -56,16 +54,13 @@ function Navbar({
             <span>React Pizza</span>
           </NavLink>
         </div>
-        <ul className={`${style.navbar} ${openBurgerMenu ? style.open : ''}`}>
+        <ul className={style.navbar}>
           <li>
             <NavLink
               end="true"
               to="/"
               className={style.navlink}
-              onClick={() => {
-                setOpenBurgerMenu(false);
-                window.scrollTo(0, 0);
-              }}
+              onClick={() => window.scrollTo(0, 0)}
             >
               <GiFullPizza className={style.iconMenu} /> Pizza
             </NavLink>
@@ -74,10 +69,7 @@ function Navbar({
             <NavLink
               to="Drinks"
               className={style.navlink}
-              onClick={() => {
-                setOpenBurgerMenu(false);
-                window.scrollTo(0, 0);
-              }}
+              onClick={() => window.scrollTo(0, 0)}
             >
               <FaGlassWhiskey className={style.iconMenu} />
               Drinks
@@ -87,10 +79,7 @@ function Navbar({
             <NavLink
               to="deserts"
               className={style.navlink}
-              onClick={() => {
-                setOpenBurgerMenu(false);
-                window.scrollTo(0, 0);
-              }}
+              onClick={() => window.scrollTo(0, 0)}
             >
               <GiCupcake className={style.iconMenu} />
               Desserts
@@ -100,21 +89,13 @@ function Navbar({
             <NavLink
               to="Contacts"
               className={style.navlink}
-              onClick={() => {
-                setOpenBurgerMenu(false);
-                window.scrollTo(0, 0);
-              }}
+              onClick={() => window.scrollTo(0, 0)}
             >
               <TfiHeadphoneAlt className={style.iconMenu} /> Contacts
             </NavLink>
           </li>
         </ul>
-        <div className={style.burgerMenuAndCart}>
-          <div className={style.burgerMenu} id={style.burgerMenu}>
-            <GiHamburgerMenu
-              onClick={() => handleCartMenu(openBurgerMenu, setOpenBurgerMenu)}
-            />
-          </div>
+        <div className={style.handleCart}>
           <div>
             <Link
               end="true"
