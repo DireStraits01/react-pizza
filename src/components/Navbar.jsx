@@ -31,7 +31,7 @@ function Navbar({
         <div className={style.textInfoHeader}>
           <p>
             <MdDeliveryDining style={{ fontSize: '20px' }} /> Average delivery
-            time this week
+            time
             <span className={style.bestTimeDelivery}> 00:26:28</span>
           </p>
           <p>
@@ -118,6 +118,12 @@ function Navbar({
             </Link>
             <div className={`${style.cart} ${openCart ? style.open : ''}`}>
               <div className={style.cartScroll}>
+                <button
+                  className={style.closeCartBtn}
+                  onClick={() => handleCartMenu(openCart, setOpenCart)}
+                >
+                  close
+                </button>
                 {cart.length > 0 ? (
                   cart.map((itemInCart, index) => {
                     return (
@@ -147,7 +153,7 @@ function Navbar({
                 }}
               >
                 <Link to="order">
-                  <button>${cartCost} &#8594;</button>
+                  <button className={style.costBtn}>${cartCost} &#8594;</button>
                 </Link>
               </div>
             </div>

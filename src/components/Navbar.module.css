@@ -273,11 +273,22 @@ header {
 
 .CiCircleRemove:hover {
   color: #d11a2a;
-  font-size: 42px;
   transition: all 0.1s ease;
 }
 .open {
   right: 0%;
+}
+.closeCartBtn {
+  padding: 0;
+  left: 0;
+  border: none;
+  background: none;
+  color: tomato;
+  background-color: #d11a2a;
+  width: 100%;
+}
+.closeCartBtn:hover {
+  color: #ffff;
 }
 
 ::-webkit-scrollbar {
@@ -292,7 +303,7 @@ body::-webkit-scrollbar-thumb,
 
 /*____________Cart footer_____________*/
 
-.cart button {
+.costBtn {
   background-color: rgb(255, 105, 0);
   border: 5px solid rgba(7, 3, 0, 0);
   border-radius: 9999px;
@@ -309,7 +320,6 @@ body::-webkit-scrollbar-thumb,
   }
   .infoHeader {
     height: 300px;
-    margin-top: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -339,7 +349,8 @@ body::-webkit-scrollbar-thumb,
   }
   .handleCart {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    margin-top: 1%;
     width: 100%;
   }
   .navbar {

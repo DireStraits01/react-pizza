@@ -52,7 +52,7 @@ function Cart({
   return (
     <>
       <div className={style.iteminCartWraper}>
-        <img src={cart.img} alt="" height={60} />
+        <img src={cart.img} alt="" height={50} />
         <div className={style.iteminCartInfo}>
           <div className={style.itemInCartTextInfo}>
             <h5>{cart.title}</h5>
