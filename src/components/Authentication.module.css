@@ -62,3 +62,22 @@ form {
   font-size: 12px;
   cursor: pointer;
 }
+@media (max-width: 1090px) {
+  form {
+    background-color: rgb(243 243 247);
+    height: 350px;
+    width: 200px;
+    margin-top: 20px;
+
+    padding: 5px;
+  }
+  .authenForms input {
+    width: 150px;
+  }
+  .authenButtons button {
+    width: 150px;
+  }
+  .signAndPass {
+    margin-top: 5px;
+  }
+}
