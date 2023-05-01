@@ -34,6 +34,7 @@ form {
 .authenButtons {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .authenButtons button {
   background-color: var(--main-color);
@@ -55,29 +56,35 @@ form {
 .signAndPass {
   display: flex;
   margin-top: 20px;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
-}
-.signAndPass {
   font-size: 12px;
   cursor: pointer;
 }
+
 @media (max-width: 1090px) {
   form {
     background-color: rgb(243 243 247);
     height: 350px;
     width: 200px;
-    margin-top: 20px;
-
+    margin-top: 50px;
     padding: 5px;
   }
   .authenForms input {
     width: 150px;
+    height: 20px;
+  }
+  .authenForms input::placeholder {
+    font-size: 8px;
+    letter-spacing: 1px;
   }
   .authenButtons button {
     width: 150px;
+    font-size: 10px;
   }
   .signAndPass {
     margin-top: 5px;
+    font-size: 8px;
   }
 }
