@@ -21,8 +21,11 @@ function Authentication() {
         </div>
 
         <div className={style.authenButtons}>
-          <button>sign in</button>
           <button>login</button>
+          <div className={style.signAndPass}>
+            <p>sign in</p>
+            <p>forgot password</p>
+          </div>
         </div>
       </form>
     </>
