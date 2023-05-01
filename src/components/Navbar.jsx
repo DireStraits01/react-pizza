@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import style from './Navbar.module.css';
 import { NavLink, Link } from 'react-router-dom';
 import Cart from './Cart';
-import Authentication from './Authentication';
+import { FiLogIn } from 'react-icons/fi';
 
 function Navbar({
   cart,
@@ -43,8 +43,10 @@ function Navbar({
             <span className={style.bestTimeDelivery}> 11:00 AM – 00:00 PM</span>
           </p>
         </div>
-        <div className={style.authenInfoHeader}>
-          <Authentication />
+        <div className={style.login}>
+          <Link to="login">
+            <FiLogIn />
+          </Link>
         </div>
       </div>
       <header>

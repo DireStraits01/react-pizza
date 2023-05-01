@@ -1,4 +1,4 @@
-import style from './Navbar.module.css';
+import style from './Authentication.module.css';
 
 function Authentication() {
   return (

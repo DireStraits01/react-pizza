@@ -7,6 +7,7 @@ import DrinksList from './components/pages/DrinksList';
 import Layout from './components/Layout';
 import DessertList from './components/pages/DessertList';
 import Order from './components/pages/Order';
+import Authentication from './components/Authentication';
 import useLocalStorage from './components/hooks/useLocalStorage';
 
 function App() {
@@ -69,8 +70,6 @@ function App() {
               setCartCost={setCartCost}
               cartCount={cartCount}
               setCartCount={setCartCount}
-              // items={items}
-              // setItems={setItems}
             />
           }
         >
@@ -124,6 +123,7 @@ function App() {
               />
             }
           />
+          <Route path="login" element={<Authentication />} />
         </Route>
       </Routes>
     </div>
