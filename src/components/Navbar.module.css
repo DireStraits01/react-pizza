@@ -98,7 +98,9 @@ header {
 }
 
 .ifCartEmpty {
-  margin-top: 50%;
+  padding-top: 50%;
+  padding-bottom: 20%;
+  background-color: #fff;
 }
 /*----------------------------------------------*/
 

@@ -42,6 +42,7 @@ form {
   width: 300px;
   border-radius: 9999px;
   color: #fff;
+  margin-top: 20px;
   transition: all 0.5s ease;
   -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
@@ -66,13 +67,13 @@ form {
 @media (max-width: 1090px) {
   form {
     background-color: rgb(243 243 247);
-    height: 350px;
-    width: 200px;
+    height: 270px;
+    width: 300px;
     margin-top: 50px;
-    padding: 5px;
+    padding: 50px;
   }
   .authenForms input {
-    width: 150px;
+    width: 200px;
     height: 20px;
   }
   .authenForms input::placeholder {
@@ -80,7 +81,7 @@ form {
     letter-spacing: 1px;
   }
   .authenButtons button {
-    width: 150px;
+    width: 200px;
     font-size: 10px;
   }
   .signAndPass {
