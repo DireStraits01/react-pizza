@@ -1,13 +1,18 @@
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import auth from '../auth';
 import style from './Authentication.module.css';
 import { useState } from 'react';
-
 function Authentication() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const signIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password);
+  };
   return (
     <>
-      <form action="#" onSubmit={(e) => e.preventDefault}>
+      <form action="#" onSubmit={signIn}>
         <div className={style.authenForms}>
           <div>
             <label htmlFor="email"></label>
@@ -37,7 +42,7 @@ function Authentication() {
         </div>
 
         <div className={style.authenButtons}>
-          <button>login</button>
+          <button type="submit">login</button>
           <div className={style.signAndPass}>
             <p>sign in</p>
             <p>forgot password</p>
